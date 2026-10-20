@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "imgSrc": "/Team/Joey Bean.png",
+    "title": "Joey Bean",
+    "slug": "joey-bean",
+    "designation": "Founder & CEO",
+    "description": [
+      "Joey, CEO and Founder of White Swan Advisors, has revolutionized how businesses connect with capital, investors, and strategic partners. With hundreds of millions raised through his proprietary Organic Outbound strategies, Joey has spearheaded transformative funding efforts and facilitated impactful partnerships across a variety of industries.",
+      "In 2025 alone, Joey has led significant projects, including a $150 million equity raise for a U.S.-based solar farm and production line, as well as the successful restructuring of a $50 million loan, reducing the interest rate from 10% to 6%. These achievements underscore the tangible impact of his innovative strategies and systems.",
+      "With a proven track record of delivering measurable results, Joey combines cutting-edge strategies with a client-first philosophy. His expertise includes high-impact partnership generation, integration of complex systems, and investor relations, ensuring his partners achieve sustainable growth and financial success.",
+      "Joey’s leadership drives White Swan’s mission to empower businesses with capital solutions tailored to their unique needs. Whether helping companies secure critical funding or establishing global investor relationships, Joey brings unparalleled insights and passion to every engagement, creating impactful results for every partner.",
+      "At the heart of Joey’s work is a commitment to building a better world by fostering innovation, supporting businesses that drive meaningful change, and helping people thrive. His mission is to leave a lasting legacy of opportunity and empowerment for future generations."
+    ]
+  },
+  
+  {
+  "id": 4,
+  "imgSrc": "/Team/Rudy Sanchez.png",
+  "title": "Rudy Sanchez",
+  "slug": "rudy-sanchez",
+  "designation": "Senior Advisor",
+  "description": [
+    "Rudy Sanchez is a senior financial services executive with more than 25 years of experience across institutional sales and trading, structured products, capital formation, alternative investments, and emerging markets. Throughout his career, he has built a reputation as a highly entrepreneurial leader with deep expertise in equities, fixed income, commercial real estate offerings, and cross-border capital markets.",
+    "He has successfully raised and structured more than $500 million in capital through a variety of investment vehicles and securities structures, including Reg D and Reg A offerings, PIPEs, SPACs, secondary offerings, and private placements. His experience spans institutional trading, syndicate management, investment banking origination, and alternative investment distribution.",
+    "He earned an MBA from Binghamton University School of Management and a Bachelor of Science in Management from Binghamton University School of Management. He holds FINRA Series 7, 24, and 63 licenses and is fluent in Spanish and Portuguese."
+  ]
+},
+
+   {
+  "id": 5,
+  "imgSrc": "/Team/Luke.png",
+  "title": "Luke Rowley",
+  "slug": "luke-rowley",
+  "designation": "Analyst and Advisor",
+  "description": [
+    "Luke Rowley is an investment banking expert with over five years of experience advising clients on capital raises, mergers and acquisitions, restructurings, bankruptcies, and financial advisory engagements. As an Advisor with White Swan Advisors, Luke specializes in structuring and executing capital raises across industries such as manufacturing, chemicals, infrastructure, data centers, consumer, health care, and distribution. He is actively involved in every stage of the deal process—including initial client diligence, developing comprehensive marketing strategies and materials, curating targeted investor lists, managing investor diligence, and overseeing documentation, closing, and funding. His expertise spans the full transaction lifecycle, ensuring efficient execution and optimal outcomes for his clients.",
+    "Luke also serves as an integral part of Rowan Digital Infrastructure’s capital markets team, where he contributes to the financing of large-scale infrastructure and data center projects valued in the hundreds of millions to billions of dollars. In this capacity, he supports project financings, asset-backed securities (ABS) issuances, and the development of hedging strategies tied to complex construction and operating assets. His combined knowledge of the financing and commercial sides of infrastructure enables him to bridge the gap between capital markets and real-world project execution—bringing a sophisticated understanding of both the technical and financial dimensions of large-scale developments.",
+    "Earlier in his career, Luke held investment banking and commercial finance roles with Chiron Financial and Texas Capital Bank, where he focused on small to mid-sized transactions ranging from $10 million to several hundred million dollars.",
+    "He also founded Lifted Falls Capital, a family office investment firm focused on lower-middle market opportunities, where he led acquisitions and portfolio operations.",
+    "Luke earned a Master of Science in Finance and a Bachelor of Arts in Economics from The University of Texas at Austin and holds FINRA Series 63, 79, 82, and SIE certifications."
+  ]
+},
+   {
+    "id": 6,
+    "imgSrc": "/Team/Abid Kamal.png",
+    "title": "Abid Kamal",
+    "slug": "abid-kamal",
+    "designation": "Director of Operations",
+    "description": [
+      "Abid Kamal, Director of Operations at White Swan Advisors, is the driving force behind the firm’s operational excellence and technology-led innovation. A graduate of Zakir Hussain College of Engineering and Technology, AMU, with a Bachelor of Science in Engineering Management, Abid blends technical expertise with strategic vision to optimize processes and scale impact across the organization.",
+      "In his role as DOO, Abid leads the design and execution of operational strategies that enhance efficiency, accountability, and performance firm-wide. From streamlining internal systems to expanding automation and analytics infrastructure, his leadership ensures White Swan operates with agility and precision.",
+      "Abid has a proven track record of building scalable, high-performance systems that redefine how financial advisory operations are run. His work has accelerated turnaround times, strengthened client servicing capabilities, and enhanced decision-making through data-driven insights. His areas of expertise include operational strategy, systems design, and technology-enabled execution.",
+      "Beyond operations, Abid plays a key role in aligning cross-functional teams, embedding innovation into core workflows, and driving long-term strategic outcomes. His unwavering focus on quality, efficiency, and impact makes him a cornerstone of White Swan Advisors’ ability to deliver world-class capital solutions to its clients."
+    ]
+  },
+  
+  {
+    "id": 7,
+    "imgSrc": "/Team/Philip Martin Wells.png",
+    "title": "Philip Martin Wells",
+    "slug": "philip-marten-wells",
+    "designation": "Director of Communication",
+    "description": [
+      "Philip Martin Wells brings a dynamic combination of academic excellence and real-world expertise to his role as Director of Communication at White Swan Advisors. With a degree in Natural Resource Management and triple minors in Restoration Ecology, Conservation Biology, and Global Environmental Sustainability from Colorado State University, Philip embodies innovative thinking and a strategic mindset.",
+      "Over the past 14 months, Philip has led systems that generated over million in demand and client acquisition, driving success across industries such as law, marketing, media, and finance. His ability to adapt and excel in diverse fields showcases his strategic communication skills and knack for solving complex challenges.",
+      "As Director of Communication, Philip oversees partnership management, and internal alignment, ensuring that every initiative is clear, cohesive, and growth-driven. Known for his leadership and mentorship, Philip has a proven track record of inspiring teams, fostering collaboration, and delivering exceptional results.",
+      "Philip’s passion for connecting people and ideas is at the heart of his work. Whether managing investor communications or spearheading innovative strategies, he brings unmatched dedication and expertise to every project, making him an indispensable asset to White Swan Advisors."
+    ]
+  },
+
+   {
+  "id": 8,
+  "imgSrc": "/Team/Simrin.png",
+  "title": "Simrin Kapoor",
+  "slug": "simrin-kapoor",
+  "designation": "Executive Assistant",
+  "description": [
+    "Simrin holds a Master's degree in Corporate and Commercial Law and has a proven track record of driving cross-department collaboration, refining internal operations, and supporting high-growth firms as they scale. At White Swan Advisors, she is instrumental in maintaining operational excellence and enabling the firm to meet ambitious growth and client service targets.",
+"She brings a rare blend of strategic operational leadership and cross-functional execution to the firm’s day-to-day engine. With deep experience in marketing, brand development, and communication, she now channels that skill set into enabling smooth, scalable operations across the business.",
+"At White Swan Advisors, Simrin oversees key operational domains including process optimisation, automated systems integration, and internal team performance. She serves as the vital link between senior management’s strategic vision and the organisational infrastructure. Her leadership ensures that workflows, tools, and teams are aligned to deliver client- and investor-facing outcomes reliably and efficiently.",
+"A natural multitasker, Simrin thrives in environments of complexity and high pace, applying her marketing mindset to operations by emphasising clarity of messaging, organisation, measurable goals, and continuous improvement. She is known for her practical mindset: turning strategy into what gets done today, and ensuring that nothing falls between the cracks."
+  ]
+},
+
+ 
+  
+
+
+
+ 
+  {
+  "id": 9,
+  "imgSrc": "/Team/Rafi.png",
+  "title": "Rafi Hasan",
+  "slug": "rafi-hasan",
+  "designation": "Executive Assistant",
+  "description": [
+    "Rafi Hasan is a seasoned operations professional whose focus is on organisational effectiveness, resource optimisation and the operational backbone that enables our firm’s growth trajectory. In his role at White Swan Advisors, Rafi leads the execution of daily operational processes, supports leadership in decision-making, and ensures that the organisation runs as a well-oiled machine.",
+    "With a keen eye for data-driven process improvement, Rafi works across departments to define and refine workflows, manage key operational metrics and drive efficiencies that support both client engagements and internal scalability. His role ensures that project, resource and operational risks are proactively addressed, and that the firm’s infrastructure supports both current business needs and future growth.",
+    "Rafi is particularly adept at pulling together cross-functional coordination—from operations through finance, technology and service delivery—enabling the firm’s operational cadence to keep pace with strategic ambition. His pragmatic, results-oriented approach makes him a trusted partner to senior leadership in translating goals into operational reality.",
+    "Rafi brings to White Swan Advisors a combination of analytical rigor, process discipline and a strong sense of ownership. His leadership helps ensure the operations behind the firm’s public-facing success are robust, repeatable and positioned for scalability."
+  ]
+}
+
+  
+]

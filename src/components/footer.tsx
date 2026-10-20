@@ -1,0 +1,128 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { NAV_LINKS } from "../../constants";
+import { Button } from "./ui/button";
+import CalendlyEmbed from "./calendly";
+
+const Footer = () => {
+  return (
+    <footer className="bg-white">
+      {/* Existing footer content (logo + menu) */}
+      <div className="flex flex-col flex-wrap gap-2 md:gap-6 md:flex-row text-center md:text-start justify-between items-center max-w-screen-2xl mx-auto py-14 px-4 lg:px-32">
+        <div className="flex flex-col gap-4 items-center md:items-start">
+          <Image
+            src="/logo-black.svg"
+            alt="logo"
+            width={200}
+            height={200}
+            className="text-black fill-black"
+          />
+          <p className="text-xs hidden md:flex">
+            © {new Date().getFullYear()} White Swan Advisors Group. All Rights Reserved.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h5 className="font-normal">Menu</h5>
+          <div className="flex gap-1 lg:gap-6 flex-col md:flex-row">
+            {NAV_LINKS.map((item, index) => {
+              if (item.path === "/contact") {
+                return (
+                  <CalendlyEmbed key={index}>
+                    <Button
+                      variant="ghost"
+                      className="items-start p-0 h-fit text-[16px] hover:text-royalblue font-normal hover:bg-transparent"
+                    >
+                      {item.name}
+                    </Button>
+                  </CalendlyEmbed>
+                );
+              }
+
+              return (
+                <Link key={index} href={item.path} className="text-black truncate">
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        <p className="text-xs flex md:hidden">
+          © {new Date().getFullYear()} White Swan Advisors Group. All Rights Reserved.
+        </p>
+      </div>
+
+      {/* New legal disclaimer section (from your Google Doc) */}
+      <div className="border-t border-gray-200">
+        <div
+  className="max-w-screen-2xl mx-auto px-6 lg:px-20 py-3 text-gray-500 space-y-2 italic"
+  style={{ fontSize: "6px", lineHeight: "1.1" }}
+>
+
+          <p className="text-xs">
+            Securities are offered through Finalis Securities LLC Member FINRA / SIPC. White Swan Advisors is not a
+            registered broker-dealer, and Finalis Securities LLC and White Swan Advisors are separate, unaffiliated
+            entities. Finalis Securities LLC, Office of Supervisory Jurisdiction is located at 450 Lexington Ave, New
+            York, NY 10017, 800-962-0418.
+          </p>
+
+          <p className="text-xs flex flex-wrap gap-x-2 gap-y-1 justify-center md:justify-start">
+            <a className="text-xs underline hover:no-underline" href="https://www.finalis.com/privacy" target="_blank" rel="noreferrer">
+              Finalis Privacy Policy
+            </a>
+            <span>|</span>
+            <a
+              className="text-xs underline hover:no-underline"
+              href="https://www.finalis.com/regulatory-disclaimers"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Finalis Business Continuity Plan
+            </a>
+            <span>|</span>
+            <a className="text-xs underline hover:no-underline" href="https://brokercheck.finra.org" target="_blank" rel="noreferrer">
+              FINRA BrokerCheck
+            </a>
+            <span>|</span>
+            <a
+              className="text-xs underline hover:no-underline"
+              href="https://files.brokercheck.finra.org/crs_305908.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Finalis Form Customer Relationship Summary (<em>“Form CRS”</em>)
+            </a>
+          </p>
+
+          <p className="text-xs">
+            <a className="text-xs underline hover:no-underline italic" href="/" rel="noreferrer">
+              www.whiteswanadvisors.com
+            </a>{" "}
+            (the White Swan Advisors <em>“Website”</em>) is a website operated by White Swan Advisors. This website is for
+            informational purposes only, is not an offer, solicitation, recommendation, or commitment for any transaction
+            or to buy or sell any security or other financial product, and is not intended as investment advice or as a
+            confirmation of any transaction. Products and services on this website may not be available for residents of
+            certain jurisdictions. Please consult with a Finalis Securities’ registered representative regarding the
+            product or service in question for further information. Investments involve risk and are not guaranteed to
+            appreciate. Any market price, indicative value, estimate, view, opinion, data, or other information herein is
+            not warranted as to completeness or accuracy, is subject to change without notice, and White Swan Advisors
+            along with Finalis Securities LLC accepts no liability for its use or to update it or keep it current.
+          </p>
+
+          <p className="text-xs">
+            Investing in private placements involves a high degree of risk. These investments may be illiquid,
+            speculative, and subject to substantial restrictions on transferability. Investors may lose all or part of
+            their investment and should only invest capital they can afford to lose. Prospective investors should conduct
+            their own due diligence and consult with their legal, tax, and financial advisors prior to making any
+            investment decision. For your reference, Finalis’ Form CRS describes the services that we provide, how we are
+            compensated, and other important information about Finalis Securities LLC.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
