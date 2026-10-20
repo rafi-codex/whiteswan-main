@@ -55,6 +55,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0c131c] text-white font-sans antialiased">
+      <style>{`.old-global-nav, .old-global-footer { display: none !important; }`}</style>
+
       {/* MENU BAR: 52px logo left of White Swan Advisors */}
       <header className="sticky top-0 z-40 bg-[#131b24]/95 backdrop-blur border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -71,7 +73,7 @@ export default function Home() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-xs sm:text-sm text-slate-300">
-            <Link href="/services" className="hover:text-white transition">
+            <Link href="/service" className="hover:text-white transition">
               Services
             </Link>
             <Link href="/profile" className="hover:text-white transition">
