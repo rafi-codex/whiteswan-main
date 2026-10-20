@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+// import Navbar from "@/components/navbar";
+// import Footer from "@/components/footer";
 import { AOSInit } from "@/components/aos-init";
 import { Montserrat } from "next/font/google";
 // import NextTopLoader from "nextjs-toploader";
@@ -38,9 +38,9 @@ export default function RootLayout({
       <AOSInit />
       <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
         {/* <NextTopLoader color="#153147" showSpinner={false} /> */}
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
