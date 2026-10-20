@@ -22,6 +22,7 @@ export default function Home() {
 
   const [, setCarouselPage] = useState(0);
   const [contactOpen, setContactOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const boxRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -72,6 +73,7 @@ export default function Home() {
             </span>
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-xs sm:text-sm text-slate-300">
             <Link href="/service" className="hover:text-white transition">
               Services
@@ -89,7 +91,58 @@ export default function Home() {
               Contact
             </button>
           </nav>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-slate-300 hover:text-white focus:outline-none p-2"
+            aria-label="Toggle Menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#131b24] border-b border-white/10 px-6 py-5 flex flex-col gap-4 text-sm text-slate-300">
+            <Link
+              href="/service"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-white transition py-1"
+            >
+              Services
+            </Link>
+            <Link
+              href="/profile"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-white transition py-1"
+            >
+              Our Profile
+            </Link>
+            <Link
+              href="/transactions"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-white transition py-1"
+            >
+              Transactions
+            </Link>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setContactOpen(true);
+              }}
+              className="text-left hover:text-white transition py-1 text-white font-semibold"
+            >
+              Contact
+            </button>
+          </div>
+        )}
       </header>
 
       <main>
