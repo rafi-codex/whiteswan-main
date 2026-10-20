@@ -93,7 +93,7 @@ export default function Home() {
       </header>
 
       <main>
-        {/* SECTION 1: HERO */}
+        {/* SECTION 1: HERO WITH VIDEO BACKGROUND */}
         <section className="relative overflow-hidden bg-[#161f29] pt-14 pb-20 border-b border-white/10">
           <video
             autoPlay
@@ -102,7 +102,7 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
           >
-            <source src="/videos/american-cities.mp4" type="video/mp4" />
+            <source src="/videos/homevideo.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#161f29]/80 via-[#161f29]/85 to-[#0c131c]" />
 
@@ -550,7 +550,7 @@ export default function Home() {
             <div className="space-y-3">
               <a
                 href="/contact"
-                className="block w-full text-left bg-[#1c2b3e] hover:bg-[#243750] border border-blue-400/40 rounded p-4 transition"
+                className="block w-full text-left bg-[#1c2b3e] hover:bg-[#243750] border border-blue-400/40 rounded p-4 transition cursor-pointer"
               >
                 <div className="text-sm font-semibold text-white">
                   Space Company (Form 1A)
@@ -560,23 +560,29 @@ export default function Home() {
                 </div>
               </a>
 
-              <div className="block w-full text-left bg-[#151f2c]/60 border border-white/5 rounded p-4 opacity-60 cursor-not-allowed">
-                <div className="text-sm font-semibold text-slate-300">
+              <a
+                href="/contact"
+                className="block w-full text-left bg-[#1c2b3e] hover:bg-[#243750] border border-blue-400/40 rounded p-4 transition cursor-pointer"
+              >
+                <div className="text-sm font-semibold text-white">
                   Energy Transition Company
                 </div>
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-slate-400">
                   EV charging, storage, solar, U.S. or international (Form 2A)
                 </div>
-              </div>
+              </a>
 
-              <div className="block w-full text-left bg-[#151f2c]/60 border border-white/5 rounded p-4 opacity-60 cursor-not-allowed">
-                <div className="text-sm font-semibold text-slate-300">
+              <a
+                href="/contact"
+                className="block w-full text-left bg-[#1c2b3e] hover:bg-[#243750] border border-blue-400/40 rounded p-4 transition cursor-pointer"
+              >
+                <div className="text-sm font-semibold text-white">
                   Trade Business Owner (Raise or Sell)
                 </div>
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-slate-400">
                   Looking to sell or grow (Form 3A / Sell Form)
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
