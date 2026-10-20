@@ -20,7 +20,7 @@ export default function Home() {
     "lane-trades": true,
   });
 
-  const [carouselPage, setCarouselPage] = useState(0);
+  const [, setCarouselPage] = useState(0);
   const [contactOpen, setContactOpen] = useState(false);
 
   const boxRefs = useRef<Record<string, HTMLDivElement | null>>({});
