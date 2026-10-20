@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { User, Briefcase } from "lucide-react";
-import CalendlyEmbed from "../calendly";
 import { Button } from "../ui/button";
 
 const HowItWorks = () => {
@@ -21,7 +21,7 @@ const HowItWorks = () => {
             </h2>
 
             <div data-aos="fade-right" data-aos-delay="200" className="pt-2">
-              <CalendlyEmbed>
+              <Link href="/choice">
                 <Button
                   variant="white"
                   size="lg"
@@ -29,7 +29,7 @@ const HowItWorks = () => {
                 >
                   I&apos;M READY TO RAISE
                 </Button>
-              </CalendlyEmbed>
+              </Link>
               <p className="text-xs sm:text-sm text-gray-400 mt-2 font-normal">
                 We run the raise, you run your company.
               </p>

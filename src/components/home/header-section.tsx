@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import CalendlyEmbed from "../calendly";
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 const HeaderSection = ({ src }: { src: string }) => {
@@ -57,7 +57,7 @@ const HeaderSection = ({ src }: { src: string }) => {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="600" className="pt-4 space-y-2">
-            <CalendlyEmbed>
+            <Link href="/choice">
               <Button
                 variant="white"
                 size="lg"
@@ -65,7 +65,7 @@ const HeaderSection = ({ src }: { src: string }) => {
               >
                 I&apos;M READY TO RAISE
               </Button>
-            </CalendlyEmbed>
+            </Link>
             <p className="text-xs sm:text-sm text-gray-400 font-normal">
               We run the raise, you run your company.
             </p>

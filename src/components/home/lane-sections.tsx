@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import CalendlyEmbed from "../calendly";
 import { Button } from "../ui/button";
 
 interface LaneBoxState {
@@ -349,7 +349,7 @@ const LaneSections = () => {
 
           {/* Button under the three boxes */}
           <div data-aos="fade-up" className="pt-10 sm:pt-14 flex justify-center">
-            <CalendlyEmbed>
+            <Link href="/choice">
               <Button
                 variant="white"
                 size="lg"
@@ -357,7 +357,7 @@ const LaneSections = () => {
               >
                 Book a Session
               </Button>
-            </CalendlyEmbed>
+            </Link>
           </div>
         </div>
       </div>
