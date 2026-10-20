@@ -25,14 +25,17 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-screen-2xl flex items-center justify-between mx-auto">
-        <Link href="/">
+        <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo.svg"
-            alt="logo"
-            width={200}
-            height={40}
-            className="cursor-pointer w-[150px] sm:w-[250px] h-full object-contain"
+            src="/wsa-logo.svg"
+            alt="White Swan Advisors"
+            width={52}
+            height={52}
+            className="cursor-pointer w-[42px] h-[42px] sm:w-[52px] sm:h-[52px] object-contain"
           />
+          <span className="text-white font-serif font-bold text-lg sm:text-2xl tracking-tight whitespace-nowrap">
+            White Swan Advisors
+          </span>
         </Link>
         <div className="hidden md:flex items-center gap-4">
           {NAV_LINKS.map((item, index) => {

@@ -7,32 +7,37 @@ import CalendlyEmbed from "./calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-[#0e0e0e] text-white">
       {/* Existing footer content (logo + menu) */}
-      <div className="flex flex-col flex-wrap gap-2 md:gap-6 md:flex-row text-center md:text-start justify-between items-center max-w-screen-2xl mx-auto py-14 px-4 lg:px-32">
-        <div className="flex flex-col gap-4 items-center md:items-start">
-          <Image
-            src="/logo-black.svg"
-            alt="logo"
-            width={200}
-            height={200}
-            className="text-black fill-black"
-          />
-          <p className="text-xs hidden md:flex">
-            © {new Date().getFullYear()} White Swan Advisors Group. All Rights Reserved.
+      <div className="flex flex-col flex-wrap gap-4 md:gap-6 md:flex-row text-center md:text-start justify-between items-center max-w-screen-2xl mx-auto py-12 px-4 lg:px-32">
+        <div className="flex flex-col gap-3 items-center md:items-start">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/wsa-logo.svg"
+              alt="White Swan Advisors"
+              width={44}
+              height={44}
+              className="w-[44px] h-[44px] object-contain"
+            />
+            <span className="font-serif font-bold text-xl md:text-2xl text-white tracking-tight">
+              White Swan Advisors
+            </span>
+          </div>
+          <p className="text-xs text-gray-400 hidden md:flex">
+            © {new Date().getFullYear()} White Swan Advisors. All Rights Reserved.
           </p>
         </div>
 
         <div className="space-y-3">
-          <h5 className="font-normal">Menu</h5>
-          <div className="flex gap-1 lg:gap-6 flex-col md:flex-row">
+          <h5 className="font-normal text-sm uppercase tracking-wider text-gray-400">Menu</h5>
+          <div className="flex gap-1 lg:gap-6 flex-col md:flex-row items-center">
             {NAV_LINKS.map((item, index) => {
               if (item.path === "/contact") {
                 return (
                   <CalendlyEmbed key={index}>
                     <Button
                       variant="ghost"
-                      className="items-start p-0 h-fit text-[16px] hover:text-royalblue font-normal hover:bg-transparent"
+                      className="items-start p-0 h-fit text-[16px] text-gray-300 hover:text-white font-normal hover:bg-transparent"
                     >
                       {item.name}
                     </Button>
@@ -41,7 +46,7 @@ const Footer = () => {
               }
 
               return (
-                <Link key={index} href={item.path} className="text-black truncate">
+                <Link key={index} href={item.path} className="text-gray-300 hover:text-white truncate">
                   {item.name}
                 </Link>
               );
@@ -49,17 +54,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="text-xs flex md:hidden">
-          © {new Date().getFullYear()} White Swan Advisors Group. All Rights Reserved.
+        <p className="text-xs text-gray-400 flex md:hidden">
+          © {new Date().getFullYear()} White Swan Advisors. All Rights Reserved.
         </p>
       </div>
 
-      {/* New legal disclaimer section (from your Google Doc) */}
-      <div className="border-t border-gray-200">
+      {/* Legal disclaimer section */}
+      <div className="border-t border-white/10">
         <div
-  className="max-w-screen-2xl mx-auto px-6 lg:px-20 py-3 text-gray-500 space-y-2 italic"
-  style={{ fontSize: "6px", lineHeight: "1.1" }}
->
+          className="max-w-screen-2xl mx-auto px-6 lg:px-20 py-4 text-gray-400 space-y-3 italic text-xs leading-relaxed"
+        >
 
           <p className="text-xs">
             Securities are offered through Finalis Securities LLC Member FINRA / SIPC. White Swan Advisors is not a

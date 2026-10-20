@@ -25,7 +25,12 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "White Swan Advisors",
-  description: "Boutique Merchant Bank and Capital Advisory Firm For The Lower-middle Market. ",
+  description: "Boutique Merchant Bank and Capital Advisory Firm For The Lower-middle Market.",
+  icons: {
+    icon: "/wsa-favicon.png",
+    shortcut: "/wsa-favicon.png",
+    apple: "/wsa-favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -38,13 +43,9 @@ export default function RootLayout({
       <AOSInit />
       <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
         {/* <NextTopLoader color="#153147" showSpinner={false} /> */}
-        <div className="old-global-nav">
-          <Navbar />
-        </div>
+        <Navbar />
         {children}
-        <div className="old-global-footer">
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );

@@ -74,7 +74,7 @@ const Customize = () => {
             {
               title: "Internal Rolodex and Strategic Partners",
               description:
-                "Our trusted network includes 2,257+ strategic relationships, encompassing seasoned investors, affiliates, and partners who bring proven expertise in capital allocation and advisory services. These relationships are the cornerstone of our ability to secure meaningful connections for our clients.",
+                "Our trusted network includes 2,755 strategic relationships, encompassing seasoned investors, affiliates, and partners who bring proven expertise in capital allocation and advisory services. These relationships are the cornerstone of our ability to secure meaningful connections for our clients.",
             },
             {
               title: "Retail Capital Market Campaigns",

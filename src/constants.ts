@@ -259,6 +259,8 @@ export const TRACK_RECORD = {
   ],
 };
 
+export const HOME_TRACK_RECORD = TRACK_RECORD.deals;
+
 export const HOW_IT_WORKS = {
   heading: "You Take the Investor Calls. We Do Everything Else.",
   buttonText: "I'M READY TO RAISE",
