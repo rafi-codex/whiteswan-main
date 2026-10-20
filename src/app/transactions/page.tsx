@@ -200,7 +200,7 @@ const rows = [
 
 export default function TransactionsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       {/* Hero Video Banner */}
       <HeaderTransaction />
 
