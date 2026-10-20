@@ -7,17 +7,17 @@ import CalendlyEmbed from "./calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0e0e0e] text-white">
+    <footer className="bg-[#0c131c] text-white border-t border-white/10">
       {/* Existing footer content (logo + menu) */}
       <div className="flex flex-col flex-wrap gap-4 md:gap-6 md:flex-row text-center md:text-start justify-between items-center max-w-screen-2xl mx-auto py-12 px-4 lg:px-32">
         <div className="flex flex-col gap-3 items-center md:items-start">
           <div className="flex items-center gap-3">
             <Image
-              src="/wsa-logo.svg"
+              src="/wsa-logo.png"
               alt="White Swan Advisors"
               width={44}
               height={44}
-              className="w-[44px] h-[44px] object-contain"
+              className="w-[44px] h-[44px] object-contain drop-shadow"
             />
             <span className="font-serif font-bold text-xl md:text-2xl text-white tracking-tight">
               White Swan Advisors

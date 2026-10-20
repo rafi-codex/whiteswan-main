@@ -18,26 +18,27 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "mx-auto z-50 left-0 right-0 bg-[#0e0e0e99] py-2 md:py-4 fixed top-0 w-full px-4 lg:px-32",
+        "mx-auto z-50 left-0 right-0 bg-[#0c131c]/90 backdrop-blur-md border-b border-white/10 py-2 md:py-3.5 fixed top-0 w-full px-4 lg:px-32 transition-colors",
         {
-          "bg-[#a6a6a6] lg:bg-[#0e0e0e99]": isOpen,
+          "bg-[#0c131c]": isOpen,
         }
       )}
     >
       <div className="max-w-screen-2xl flex items-center justify-between mx-auto">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/wsa-logo.svg"
+            src="/wsa-logo.png"
             alt="White Swan Advisors"
             width={52}
             height={52}
-            className="cursor-pointer w-[42px] h-[42px] sm:w-[52px] sm:h-[52px] object-contain"
+            className="cursor-pointer w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] object-contain drop-shadow"
+            priority
           />
           <span className="text-white font-serif font-bold text-lg sm:text-2xl tracking-tight whitespace-nowrap">
             White Swan Advisors
           </span>
         </Link>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((item, index) => {
             if (item.path === "/contact") {
               return (
@@ -45,7 +46,7 @@ const Navbar = () => {
                   <Button
                     key={index}
                     variant="ghost"
-                    className="items-start p-0 h-fit text-white text-[16px] hover:text-royalblue font-normal hover:bg-transparent "
+                    className="items-start p-0 h-fit text-white text-[15px] hover:text-[#7ba2d3] font-normal hover:bg-transparent"
                   >
                     {item.name}
                   </Button>
@@ -57,10 +58,9 @@ const Navbar = () => {
                 key={index}
                 href={item.path}
                 className={cn(
-                  "text-white hover:text-royalblue transition-all",
+                  "text-gray-300 hover:text-white transition-colors text-[15px] font-normal",
                   {
-                    "text-royalblue underline underline-offset-4":
-                      pathname === item.path,
+                    "text-white font-semibold": pathname === item.path,
                   }
                 )}
               >
@@ -69,14 +69,15 @@ const Navbar = () => {
             );
           })}
         </div>
-        <NavSheet isOpen={isOpen} setIsOpen={setIsOpen}>
+        <div className="md:hidden">
           <Hamburger
             size={24}
-            color="#fff"
             toggled={isOpen}
             toggle={setIsOpen}
+            color="#fff"
           />
-        </NavSheet>
+        </div>
+        <NavSheet isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </div>
   );

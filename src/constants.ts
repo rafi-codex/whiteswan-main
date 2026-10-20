@@ -117,7 +117,8 @@ export const NAV_LINKS = [
 ];
 
 // === NEW APPROVED HOME PAGE V2 CONSTANTS ===
-export const LOGO_PATH = "/wsa-logo.svg";
+export const LOGO_PATH = "/wsa-logo.png";
+export const LOGO_GOLD_PATH = "/wsa-logo-gold.png";
 
 export const SITE_METRICS = {
   transactionVolume: "$1B+",

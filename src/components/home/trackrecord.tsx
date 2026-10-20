@@ -44,7 +44,7 @@ const TrackRecord = () => {
             <h2 data-aos="fade-right" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
               Recent Track Record
             </h2>
-            <div className="bg-royalblue h-2 w-32 mt-3 mb-4 rounded-full" />
+            <div className="bg-[#4a77aa] h-2 w-32 mt-3 mb-4 rounded-full" />
             <p data-aos="fade-up" className="text-gray-600 text-sm sm:text-base font-normal max-w-2xl">
               Equity and debt advisory across space, energy transition and growth companies.
             </p>
@@ -53,7 +53,7 @@ const TrackRecord = () => {
           {/* Logo in top right corner of white section (about 96px) */}
           <div data-aos="fade-left" className="self-end sm:self-center shrink-0">
             <Image
-              src="/wsa-logo.svg"
+              src="/wsa-logo.png"
               alt="White Swan Advisors Logo"
               width={96}
               height={96}

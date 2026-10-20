@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 
 const HowItWorks = () => {
   return (
-    <section className="bg-[#0E0E0E] text-white overflow-hidden py-24 lg:py-32 relative">
+    <section className="bg-[#0c131c] text-white overflow-hidden py-24 lg:py-32 relative border-t border-white/5">
       <div className="section-container flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
         {/* Left Column: Heading, Button, Subtitle, Bottom note */}
         <div className="w-full lg:w-1/2 flex flex-col justify-between space-y-8">

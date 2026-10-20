@@ -17,7 +17,7 @@ export default function NotQualifiedPage() {
           {/* Logo large above enrolled badge (~140px) */}
           <div data-aos="fade-down" className="mb-6">
             <Image
-              src="/wsa-logo.svg"
+              src="/wsa-logo.png"
               alt="White Swan Advisors Logo"
               width={140}
               height={140}

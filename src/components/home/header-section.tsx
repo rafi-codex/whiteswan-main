@@ -7,17 +7,17 @@ import { Button } from "../ui/button";
 
 const HeaderSection = ({ src }: { src: string }) => {
   return (
-    <section className="flex relative flex-col justify-center min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 text-white overflow-hidden">
+    <section className="flex relative flex-col justify-center min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 text-white overflow-hidden bg-[#0c131c]">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute w-full h-full -z-10 left-0 top-0 filter brightness-[.25] object-cover"
+        className="absolute inset-0 w-full h-full object-cover filter brightness-[.25] z-0"
       >
         <source src={src} type="video/mp4" />
       </video>
-      <div className="absolute w-full h-full -z-0 left-0 top-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/40 z-[1]" />
 
       <div className="section-container relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16">
         {/* Left Column: Text & CTA */}
@@ -26,13 +26,13 @@ const HeaderSection = ({ src }: { src: string }) => {
             data-aos="fade-down"
             className="text-xs sm:text-sm uppercase tracking-[0.2em] text-gray-300 font-semibold"
           >
-            Capital Raising and M&A for Space, Energy and the Trades
+            Capital Raising and M&amp;A for Space, Energy and the Trades
           </p>
 
           <h1
             data-aos="fade-right"
             data-aos-delay="200"
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white font-serif"
           >
             Ready to Raise Capital?
           </h1>
@@ -43,14 +43,14 @@ const HeaderSection = ({ src }: { src: string }) => {
                 "--size": "150px",
               } as React.CSSProperties
             }
-            className="bg-royalblue h-2.5 w-0 animate-width-100 max-w-[150px]"
+            className="bg-[#4a77aa] h-2.5 w-0 animate-width-100 max-w-[150px] rounded-full"
           />
 
           <div data-aos="fade-up" data-aos-delay="400" className="space-y-3 pt-2">
             <h5 className="text-xl sm:text-2xl font-medium text-white leading-snug">
               Space founders. Energy developers. Trade business owners.
             </h5>
-            <p className="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed font-normal">
               We find the investors and lenders who fit your raise. Selling a trade business instead?
               We introduce you to private equity buyers, at no cost to you.
             </p>
@@ -61,7 +61,7 @@ const HeaderSection = ({ src }: { src: string }) => {
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base shadow-lg hover:shadow-royalblue/30"
+                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base shadow-lg hover:shadow-[#4a77aa]/30 cursor-pointer"
               >
                 I&apos;M READY TO RAISE
               </Button>
@@ -81,7 +81,7 @@ const HeaderSection = ({ src }: { src: string }) => {
           {/* Logo large in top right (about 160px) */}
           <div className="w-full flex justify-center lg:justify-end pb-2">
             <Image
-              src="/wsa-logo.svg"
+              src="/wsa-logo.png"
               alt="White Swan Advisors Logo"
               width={160}
               height={160}
@@ -92,7 +92,7 @@ const HeaderSection = ({ src }: { src: string }) => {
 
           {/* 3 Stat Tiles */}
           <div className="w-full max-w-md space-y-4">
-            <div className="bg-[#131b26]/85 border border-white/10 rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
+            <div className="bg-[#1a2230]/90 border border-[#2b384e] rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
               <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 $1B+
               </div>
@@ -101,7 +101,7 @@ const HeaderSection = ({ src }: { src: string }) => {
               </div>
             </div>
 
-            <div className="bg-[#131b26]/85 border border-white/10 rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
+            <div className="bg-[#1a2230]/90 border border-[#2b384e] rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
               <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 31+
               </div>
@@ -110,7 +110,7 @@ const HeaderSection = ({ src }: { src: string }) => {
               </div>
             </div>
 
-            <div className="bg-[#131b26]/85 border border-white/10 rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
+            <div className="bg-[#1a2230]/90 border border-[#2b384e] rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
               <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                 2,755
               </div>
