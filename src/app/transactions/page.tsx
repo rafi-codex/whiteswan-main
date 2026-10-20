@@ -1,67 +1,167 @@
-import HeaderTransaction from "@/components/transactions/header-transaction";
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { LOGO_PATH, TRACK_RECORD } from "@/constants";
 
-const rows = [
-  { client: "Orbital Transports", amount: "Undisclosed", industry: "SaaS / Digital Marketplace / Aerospace & Defense", type: "Advisory – Equity", link: "https://orbitaltransports.com/" },
-  { client: "Boom Mobile", amount: "$10.0 M", industry: "Telecommunications / Wireless Services", type: "Advisory – Equity & Debt", link: "https://boom.us/" },
-  { client: "Rocket Dollar", amount: "$11.4 M", industry: "Fintech", type: "Advisory – Equity", link: "https://www.rocketdollar.com/" },
-  { client: "Zero Waste Inc.", amount: "$75.0 M", industry: "Energy & Utilities / Renewable Energy", type: "Advisory - Project Finance & Equity" },
-  { client: "Stabili Teeth", amount: "Undisclosed", industry: "Healthcare / Dental Care Services", type: "Advisory – Venture Equity", link: "https://www.stabili-teeth.com/" },
-  { client: "The AIM Organization", amount: "Undisclosed", industry: "Healthcare Services", type: "Advisory – Debt Restructring + Venture Equity", link: "https://theaimorganization.com/" },
-  { client: "Underground Printing", amount: "$9.0 M", industry: "Consumer Goods / Custom Apparel & Printing", type: "Advisory - Debt", link: "https://undergroundshirts.com/" },
-  { client: "Progenerative Medical, Inc.", amount: "Undisclosed", industry: "Medical Instruments & Devices", type: "Advisory – Venture Equity", link: "https://progenerative.com/" },
-  { client: "EndoTaggs", amount: "Undisclosed", industry: "Medical Devices", type: "Advisory – Venture Equity", link: "https://www.endo-tagss.com/" },
-  { client: "Solartia", amount: "$300.0 M", industry: "Energy & Utilities / Infrastructure / Renewable Energy", type: "Advisory - Project Finance & Equity", link: "https://solartia.com/en/" },
-  { client: "Innovative Trauma Care", amount: "Undisclosed", industry: "Medical Devices", type: "Advisory - Debt Restructuring" },
-  { client: "Sapphire Healthcare AI, Inc.", amount: "Undisclosed", industry: "SaaS / Healthcare / AI", type: "Advisory – Venture Equity & M&A", link: "https://www.sapphirercms.com/" },
-  { client: "Chemicals Company*", amount: "$17.5 M", industry: "Chemicals", type: "Capital Raise & Financial Advisory" }, 
-  { client: "Consumer Products Platform*", amount: "$42.0 M", industry: "Consumer", type: "Capital Raise" },
-  { client: "Alphalete Plumbing & Drain", amount: "Undisclosed", industry: "Home Services / Plumbing & HVAC", type: "Advisory - Debt Restructuring" },
-  { client: "Oil & Gas Operator (GOM)*", amount: "$200.0 M", industry: "Oil & Gas", type: "Financial Advisory" },
-  { client: "IX Water", amount: "Undisclosed", industry: "Energy & Utilities / Waste Water Treatment", type: "Advisory – Equity", link: "https://ixwater.com/" },
-  { client: "Manufacturing & Healthcare Company*", amount: "$20.0 M", industry: "Manufacturing & Healthcare", type: "Capital Raise & Financial Advisory" }
-];
-
-export default function ServicePage() {
+export default function TransactionsPage() {
   return (
-    <main className="">
-      <HeaderTransaction />
-      <section className="p-6 lg:p-20">
-        <h2 className="text-xl font-semibold mb-4">Transactions</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount (USD)</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Industry</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {rows.map((r, i) => (
-                <tr key={i} className={i % 2 === 0 ? undefined : "bg-gray-50"}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {r.link ? (
-                      <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                        {r.client}
-                      </a>
-                    ) : (
-                      r.client
-                    )}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{r.amount}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{r.industry}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{r.type}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <div className="min-h-screen bg-[#0c131c] text-white font-sans antialiased flex flex-col justify-between">
+      <style>{`.old-global-nav, .old-global-footer { display: none !important; }`}</style>
+
+      {/* Top Menu / Header */}
+      <header className="sticky top-0 z-40 bg-[#131b24]/95 backdrop-blur border-b border-white/15">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3.5">
+            <img
+              src={LOGO_PATH}
+              alt="White Swan Advisors"
+              style={{ width: "52px", height: "52px" }}
+              className="object-contain shrink-0"
+            />
+            <span className="text-white font-serif font-semibold tracking-tight text-lg sm:text-xl">
+              White Swan Advisors
+            </span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-8 text-xs sm:text-sm text-slate-300">
+            <Link href="/service" className="hover:text-white transition">
+              Services
+            </Link>
+            <Link href="/profile" className="hover:text-white transition">
+              Our Profile
+            </Link>
+            <Link href="/transactions" className="text-white font-semibold transition">
+              Transactions
+            </Link>
+            <Link href="/contact" className="hover:text-white transition">
+              Contact
+            </Link>
+          </nav>
         </div>
-        <p className="mt-6 text-xs text-gray-600">
-          <strong>Disclaimer :</strong> Certain investment banking transactions may have been executed by the investment banking principals during their tenure at prior firms. Some companies may not be named or referenced at the request of the company.
-        </p>
-      </section>
-    </main>
+      </header>
+
+      {/* Main Content Area */}
+      <main className="py-20 bg-white text-[#0c131c] flex-1">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-start justify-between gap-6 mb-12">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#0c131c] mb-3">
+                {TRACK_RECORD.heading}
+              </h1>
+              <div className="w-16 h-1 bg-[#2b5c8f] mb-4" />
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
+                {TRACK_RECORD.subheading}
+              </p>
+            </div>
+            <img
+              src={LOGO_PATH}
+              alt="White Swan Advisors"
+              style={{ width: "96px", height: "96px" }}
+              className="object-contain shrink-0"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TRACK_RECORD.deals.map((deal) => (
+              <div
+                key={deal.company}
+                className="border border-slate-200 rounded p-6 bg-white shadow-sm flex flex-col justify-between min-h-[160px]"
+              >
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-2">
+                    {deal.type}
+                  </div>
+                  <div className="text-lg font-bold text-[#0c131c] mb-2">
+                    {deal.company}
+                  </div>
+                </div>
+                <div
+                  className={
+                    deal.isDisclosed
+                      ? "text-lg font-bold text-[#0c131c]"
+                      : "text-xs font-medium text-slate-500"
+                  }
+                >
+                  {deal.amount}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      {/* Standard Footer */}
+      <footer className="bg-[#0e151d] border-t border-white/10 py-12 px-6 text-slate-400 text-xs">
+        <div className="max-w-6xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-3 mb-6">
+            <img
+              src={LOGO_PATH}
+              alt="White Swan Advisors"
+              style={{ width: "44px", height: "44px" }}
+              className="object-contain shrink-0"
+            />
+            <span className="text-white font-serif font-semibold text-base sm:text-lg">
+              White Swan Advisors
+            </span>
+          </Link>
+
+          <div className="space-y-3 leading-relaxed text-slate-400">
+            <p>
+              Securities are offered through{" "}
+              <a
+                href="https://www.finalis.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                Finalis Securities LLC
+              </a>{" "}
+              Member{" "}
+              <a
+                href="https://www.finra.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                FINRA
+              </a>{" "}
+              /{" "}
+              <a
+                href="https://www.sipc.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                SIPC
+              </a>
+              . White Swan Advisors LLC and Finalis Securities LLC are separate,
+              unaffiliated entities. Check the background of this firm or its
+              investment professionals on{" "}
+              <a
+                href="https://brokercheck.finra.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                FINRA&apos;s BrokerCheck
+              </a>{" "}
+              and review the{" "}
+              <a
+                href="https://www.finalis.com/form-crs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                Form CRS
+              </a>
+              .
+            </p>
+            <p className="text-slate-500 pt-2">
+              &copy; 2026 White Swan Advisors
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

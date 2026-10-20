@@ -1,24 +1,16 @@
-import HeaderTeamMember from "@/components/profile/team-member/header-team-member";
-import Member from "@/components/profile/team-member/member";
-import teamData from "@/data/team.json";
-import { notFound } from "next/navigation";
+import HeaderProfile from "@/components/profile/header-profile";
+import Partner from "@/components/profile/partner";
+import Team from "@/components/profile/team";
 import React from "react";
 
-const TeamMember = ({ params }: { params: { member: string } }) => {
-  const { member } = params;
-
-  const memberData = teamData.find((item) => item.slug == member);
-
-  if (!memberData) {
-    return notFound();
-  }
-
+const ServicePage = () => {
   return (
-    <main>
-      <HeaderTeamMember member={memberData} />
-      <Member member={memberData} />
+    <main className="">
+      <HeaderProfile />
+      <Team />
+      <Partner />
     </main>
   );
 };
 
-export default TeamMember;
+export default ServicePage;
