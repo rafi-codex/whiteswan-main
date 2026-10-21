@@ -59,7 +59,7 @@ const LaneSections = () => {
           {/* Centered logo above heading (~64px) */}
           <div data-aos="fade-down" className="mb-5 inline-flex p-2.5 rounded-2xl bg-white/[0.04] border border-white/10 shadow-lg">
             <Image
-              src="/wsa-logo.png"
+              src="/wsa-logo-vector.svg"
               alt="White Swan Advisors Logo"
               width={64}
               height={64}

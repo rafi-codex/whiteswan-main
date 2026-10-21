@@ -53,7 +53,7 @@ const TrackRecord = () => {
           {/* Logo in top right corner of white section (about 96px) */}
           <div data-aos="fade-left" className="self-end sm:self-center shrink-0">
             <Image
-              src="/wsa-logo.png"
+              src="/wsa-logo-vector.svg"
               alt="White Swan Advisors Logo"
               width={96}
               height={96}

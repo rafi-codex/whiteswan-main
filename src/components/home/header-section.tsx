@@ -81,7 +81,7 @@ const HeaderSection = ({ src }: { src: string }) => {
           {/* Logo large in top right (about 160px) */}
           <div className="w-full flex justify-center lg:justify-end pb-2">
             <Image
-              src="/wsa-logo.png"
+              src="/wsa-logo-vector.svg"
               alt="White Swan Advisors Logo"
               width={160}
               height={160}

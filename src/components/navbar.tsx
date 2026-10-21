@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="max-w-screen-2xl flex items-center justify-between mx-auto">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/wsa-logo.png"
+            src="/wsa-logo-vector.svg"
             alt="White Swan Advisors"
             width={52}
             height={52}

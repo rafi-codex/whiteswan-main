@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col gap-3 items-center md:items-start">
           <div className="flex items-center gap-3">
             <Image
-              src="/wsa-logo.png"
+              src="/wsa-logo-vector.svg"
               alt="White Swan Advisors"
               width={44}
               height={44}

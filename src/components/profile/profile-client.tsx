@@ -9,20 +9,28 @@ import teamData from "@/data/team.json";
 interface PartnerItem {
   label: string;
   name: string;
+  logo: string;
+  link: string;
 }
 
 const PARTNERS: PartnerItem[] = [
   {
     label: "BROKER-DEALER",
     name: "Finalis",
+    logo: "/partners/finalis.png",
+    link: "https://www.finalis.com/about-us",
   },
   {
     label: "LEGAL REPRESENTATION",
-    name: "Hart Davidson Carson LLC",
+    name: "Hart David Carson LLP",
+    logo: "/partners/hart-david-carson.png",
+    link: "https://www.hartdavidcarson.com/",
   },
   {
     label: "ACCOUNTING TEAM",
     name: "Spark Accounting Services",
+    logo: "/partners/spark.png",
+    link: "https://www.sparkaccountingservices.com/about",
   },
 ];
 
@@ -115,7 +123,7 @@ function ProfileContent() {
                   isSeventh ? "md:col-start-2" : ""
                 }`}
               >
-                {/* Photo with hover effect and gold ring for Joey */}
+                {/* Photo with hover effect and gold ring */}
                 <div
                   onClick={() => handleSelectMember(item.slug)}
                   className="cursor-pointer"
@@ -129,12 +137,12 @@ function ProfileContent() {
                   aria-label={`View bio of ${item.title}`}
                 >
                   <div
-                    className={`relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full transition-all duration-300 group-hover:scale-105 ${
+                    className={`relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full transition-all duration-300 ease-out overflow-hidden ${
                       isJoey
-                        ? "p-1 border-[3px] border-[#c9a55a] shadow-[0_0_20px_rgba(201,165,90,0.35)]"
+                        ? "p-1 border-[3px] border-[#c9a55a] shadow-[0_0_20px_rgba(201,165,90,0.35)] group-hover:scale-105"
                         : isSelected
-                        ? "p-1 border-2 border-[#c9a55a]/70 shadow-lg"
-                        : "p-0.5 border border-white/10 group-hover:border-[#c9a55a]/60 shadow-md"
+                        ? "p-1 border-2 border-[#c9a55a] shadow-[0_0_15px_rgba(201,165,90,0.35)] group-hover:border-[3px] group-hover:border-[#dfbb72] group-hover:scale-105"
+                        : "p-0.5 border border-[#c9a55a]/75 shadow-md group-hover:border-[2.5px] group-hover:border-[#c9a55a] group-hover:shadow-[0_0_18px_rgba(201,165,90,0.45)] group-hover:scale-105"
                     }`}
                   >
                     <Image
@@ -142,7 +150,7 @@ function ProfileContent() {
                       alt={item.title}
                       width={160}
                       height={160}
-                      className="w-full h-full rounded-full object-cover bg-slate-900"
+                      className="w-full h-full rounded-full object-cover bg-slate-900 transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 </div>
@@ -196,7 +204,7 @@ function ProfileContent() {
                   className={`w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden shadow-2xl ${
                     selectedMember.slug === "joey-bean"
                       ? "p-1 border-[3px] border-[#c9a55a] shadow-[0_0_25px_rgba(201,165,90,0.4)]"
-                      : "p-1 border border-white/20"
+                      : "p-1 border-2 border-[#c9a55a]/80 shadow-lg"
                   }`}
                 >
                   <Image
@@ -251,17 +259,41 @@ function ProfileContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PARTNERS.map((partner, idx) => (
-            <div
+            <a
               key={idx}
-              className="bg-[#161c24] border border-white/10 rounded-xl p-6 sm:p-7 shadow-lg hover:border-[#c9a55a]/40 transition-colors"
+              href={partner.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col justify-between bg-[#161c24] border border-white/10 rounded-xl p-6 hover:border-[#c9a55a]/60 hover:bg-[#1a222c] transition-all duration-300 shadow-lg hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] cursor-pointer"
             >
-              <p className="text-[#c9a55a] text-[11px] sm:text-xs font-semibold tracking-widest uppercase mb-2">
-                {partner.label}
-              </p>
-              <h3 className="text-lg sm:text-xl font-bold text-white">
-                {partner.name}
-              </h3>
-            </div>
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-[#c9a55a] text-[11px] sm:text-xs font-semibold tracking-widest uppercase">
+                    {partner.label}
+                  </p>
+                  <span className="text-slate-400 group-hover:text-[#c9a55a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-xs font-bold">
+                    ↗
+                  </span>
+                </div>
+
+                {/* White Logo Container Box so logos display big & clear with true brand colors */}
+                <div className="bg-white rounded-lg p-4 my-2 h-28 sm:h-32 flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.02] shadow-inner">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={90}
+                    className="max-h-20 sm:max-h-24 w-auto max-w-[85%] object-contain"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#c9a55a] transition-colors">
+                  {partner.name}
+                </h3>
+              </div>
+            </a>
           ))}
         </div>
       </section>
