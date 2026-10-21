@@ -110,10 +110,8 @@ export const MERCHANT_BANKING_SERVICE = [
 ];
 
 export const NAV_LINKS = [
-  { name: "Services", path: "/service" },
-  { name: "Our Profile", path: "/profile" },
   { name: "Transactions", path: "/transactions" },
-  { name: "Contact", path: "/contact" },
+  { name: "Our Profile", path: "/profile" },
 ];
 
 // === NEW APPROVED HOME PAGE V2 CONSTANTS ===

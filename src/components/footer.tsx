@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { NAV_LINKS } from "../../constants";
-import { Button } from "./ui/button";
-import CalendlyEmbed from "./calendly";
 
 const Footer = () => {
   return (
@@ -30,27 +28,15 @@ const Footer = () => {
 
         <div className="space-y-3">
           <h5 className="font-normal text-sm uppercase tracking-wider text-gray-400">Menu</h5>
-          <div className="flex gap-1 lg:gap-6 flex-col md:flex-row items-center">
-            {NAV_LINKS.map((item, index) => {
-              if (item.path === "/contact") {
-                return (
-                  <CalendlyEmbed key={index}>
-                    <Button
-                      variant="ghost"
-                      className="items-start p-0 h-fit text-[16px] text-gray-300 hover:text-white font-normal hover:bg-transparent"
-                    >
-                      {item.name}
-                    </Button>
-                  </CalendlyEmbed>
-                );
-              }
-
-              return (
-                <Link key={index} href={item.path} className="text-gray-300 hover:text-white truncate">
-                  {item.name}
-                </Link>
-              );
-            })}
+          <div className="flex gap-4 lg:gap-6 flex-col md:flex-row items-center">
+            {NAV_LINKS.map((item, index) => (
+              <Link key={index} href={item.path} className="text-gray-300 hover:text-white truncate">
+                {item.name}
+              </Link>
+            ))}
+            <Link href="/choice" className="text-gray-300 hover:text-white truncate">
+              I&apos;M READY TO RAISE
+            </Link>
           </div>
         </div>
 

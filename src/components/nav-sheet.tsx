@@ -7,7 +7,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
-import CalendlyEmbed from "./calendly";
 
 const NavSheet = ({
   className,
@@ -27,38 +26,35 @@ const NavSheet = ({
       <SheetTrigger className="md:hidden">{children}</SheetTrigger>
       <SheetContent
         side="top"
-        className={cn("h-full block top-14 md:hidden py-32 z-30", className)}
+        className={cn("h-full block top-14 md:hidden py-28 z-30 bg-white", className)}
       >
-        <div className="flex flex-col items-center gap-4">
-          {NAV_LINKS.map(({ name, path }) => {
-            if (path === "/contact") {
-              return (
-                <CalendlyEmbed key={name}>
-                  <Button
-                    variant="ghost"
-                    className="items-start p-0 h-fit text-3xl hover:text-royalblue font-normal hover:bg-transparent "
-                  >
-                    {name}
-                  </Button>
-                </CalendlyEmbed>
-              );
-            }
-            return (
-              <Link
-                key={name}
-                href={path}
-                className={cn(
-                  "text-black hover:text-royalblue transition-all text-3xl",
-                  {
-                    "text-royalblue": pathname === path,
-                  }
-                )}
-                onClick={() => setIsOpen(false)}
+        <div className="flex flex-col items-center gap-6">
+          {NAV_LINKS.map(({ name, path }) => (
+            <Link
+              key={name}
+              href={path}
+              className={cn(
+                "text-gray-900 hover:text-royalblue transition-all text-2xl font-medium",
+                {
+                  "text-royalblue font-bold": pathname === path,
+                }
+              )}
+              onClick={() => setIsOpen(false)}
+            >
+              {name}
+            </Link>
+          ))}
+          <div className="pt-4">
+            <Link href="/choice" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="default"
+                size="lg"
+                className="font-bold tracking-wider uppercase px-8 py-3.5 text-sm shadow-lg cursor-pointer"
               >
-                {name}
-              </Link>
-            );
-          })}
+                I&apos;M READY TO RAISE
+              </Button>
+            </Link>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

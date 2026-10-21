@@ -9,7 +9,6 @@ import { NAV_LINKS } from "../../constants";
 import NavSheet from "./nav-sheet";
 import { Turn as Hamburger } from "hamburger-react";
 import { Button } from "./ui/button";
-import CalendlyEmbed from "./calendly";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -38,36 +37,30 @@ const Navbar = () => {
             White Swan Advisors
           </span>
         </Link>
-        <div className="hidden md:flex items-center gap-6">
-          {NAV_LINKS.map((item, index) => {
-            if (item.path === "/contact") {
-              return (
-                <CalendlyEmbed key={index}>
-                  <Button
-                    key={index}
-                    variant="ghost"
-                    className="items-start p-0 h-fit text-white text-[15px] hover:text-[#7ba2d3] font-normal hover:bg-transparent"
-                  >
-                    {item.name}
-                  </Button>
-                </CalendlyEmbed>
-              );
-            }
-            return (
-              <Link
-                key={index}
-                href={item.path}
-                className={cn(
-                  "text-gray-300 hover:text-white transition-colors text-[15px] font-normal",
-                  {
-                    "text-white font-semibold": pathname === item.path,
-                  }
-                )}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          {NAV_LINKS.map((item, index) => (
+            <Link
+              key={index}
+              href={item.path}
+              className={cn(
+                "text-gray-300 hover:text-white transition-colors text-[15px] font-normal",
+                {
+                  "text-white font-semibold": pathname === item.path,
+                }
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link href="/choice">
+            <Button
+              variant="white"
+              size="sm"
+              className="font-bold tracking-wider uppercase px-5 py-2 text-xs sm:text-[13px] shadow-md hover:shadow-royalblue/30 cursor-pointer rounded-lg"
+            >
+              I&apos;M READY TO RAISE
+            </Button>
+          </Link>
         </div>
         <div className="md:hidden">
           <Hamburger
