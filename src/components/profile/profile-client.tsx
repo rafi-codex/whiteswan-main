@@ -150,9 +150,6 @@ function ProfileContent() {
                       alt={item.title}
                       width={160}
                       height={160}
-                      style={{
-                        objectPosition: item.slug === "simrin-kapoor" ? "center 18%" : undefined,
-                      }}
                       className="w-full h-full rounded-full object-cover bg-slate-900 transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
@@ -215,9 +212,6 @@ function ProfileContent() {
                     alt={selectedMember.title}
                     width={180}
                     height={180}
-                    style={{
-                      objectPosition: selectedMember.slug === "simrin-kapoor" ? "center 18%" : undefined,
-                    }}
                     className="w-full h-full rounded-full object-cover bg-slate-900"
                   />
                 </div>
