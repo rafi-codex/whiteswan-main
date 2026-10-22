@@ -172,7 +172,7 @@ function BookSessionContent() {
                         onClick={() => setSelectedDate(d.label)}
                         className={`p-3 rounded-xl text-left border transition-all ${
                           selectedDate === d.label
-                            ? "bg-blue-600/20 border-blue-500 text-white shadow-md shadow-blue-500/10"
+                            ? "bg-[#c9a55a]/15 border-[#c9a55a] text-white shadow-md shadow-[#c9a55a]/10 font-semibold"
                             : "bg-[#0c131c]/60 border-white/10 text-slate-300 hover:border-white/20"
                         }`}
                       >
@@ -195,7 +195,7 @@ function BookSessionContent() {
                         onClick={() => setSelectedTime(t)}
                         className={`py-2.5 px-3 rounded-xl text-center text-xs sm:text-sm font-semibold border transition-all ${
                           selectedTime === t
-                            ? "bg-blue-600 border-blue-400 text-white shadow-md"
+                            ? "bg-[#c9a55a] border-[#c9a55a] text-[#0c131c] shadow-md shadow-[#c9a55a]/20"
                             : "bg-[#0c131c]/60 border-white/10 text-slate-300 hover:border-white/20"
                         }`}
                       >
@@ -209,7 +209,7 @@ function BookSessionContent() {
                   <button
                     type="submit"
                     disabled={bookingInProgress}
-                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-base bg-white text-[#0c131c] hover:bg-slate-100 transition-all duration-200 shadow-xl active:scale-[0.99] disabled:opacity-50"
+                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-base bg-white text-[#0c131c] border border-[#c9a55a] hover:bg-slate-100 transition-all duration-200 shadow-xl active:scale-[0.99] disabled:opacity-50"
                   >
                     <span>{bookingInProgress ? "Securing Session..." : "Confirm 45-Minute Advisory Session"}</span>
                     <ArrowRight className="w-4 h-4 ml-1" />

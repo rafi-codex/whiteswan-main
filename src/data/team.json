@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "imgSrc": "/Team/Joey Bean.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Joey_Bean.png",
     "title": "Joey Bean",
     "slug": "joey-bean",
     "designation": "Founder & CEO",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "imgSrc": "/Team/Rudy Sanchez.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Rudy_Sanchez.png",
     "title": "Rudy Sanchez",
     "slug": "rudy-sanchez",
     "designation": "Senior Advisor",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "imgSrc": "/Team/Luke.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Luke_Rowley.png",
     "title": "Luke Rowley",
     "slug": "luke-rowley",
     "designation": "Analyst and Advisor",
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "imgSrc": "/Team/Abid Kamal.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Abid_Kamal.png",
     "title": "Abid Kamal",
     "slug": "abid-kamal",
     "designation": "Director of Operations",
@@ -50,7 +50,7 @@
   },
   {
     "id": 5,
-    "imgSrc": "/Team/Philip Martin Wells.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Philip.png",
     "title": "Philip Martin Wells",
     "slug": "philip-marten-wells",
     "designation": "Director of Communication",
@@ -63,7 +63,7 @@
   },
   {
     "id": 6,
-    "imgSrc": "/Team/Rafi.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Rafi_Hasan.png",
     "title": "Rafi Hasan",
     "slug": "rafi-hasan",
     "designation": "Executive Assistant",
@@ -76,7 +76,7 @@
   },
   {
     "id": 7,
-    "imgSrc": "/Team/Simrin.png",
+    "imgSrc": "/Team/White_Swan_Advisors_Team_Headshots_Full_Resolution/Sim.png",
     "title": "Simrin Kapoor",
     "slug": "simrin-kapoor",
     "designation": "Executive Assistant",

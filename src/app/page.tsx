@@ -6,7 +6,7 @@ import HowItWorks from "@/components/home/how-it-works";
 export default function Home() {
   return (
     <main>
-      <HeaderSection src={"/videos/homevideo.mp4"} />
+      <HeaderSection />
       <LaneSections />
       <TrackRecord />
       <HowItWorks />

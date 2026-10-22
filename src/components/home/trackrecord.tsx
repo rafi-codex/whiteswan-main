@@ -71,27 +71,56 @@ const TrackRecord = () => {
                   key={index}
                   className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] pl-4 min-w-0"
                 >
-                  <Link
-                    href="/transactions"
-                    className="block h-full group"
-                  >
-                    <div className="h-full bg-white border border-gray-200 rounded-xl p-6 shadow-sm group-hover:border-royalblue group-hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[190px]">
-                      <div>
-                        <span className="text-[11px] font-semibold tracking-wider text-gray-500 uppercase block leading-tight">
-                          {card.type}
-                        </span>
-                        <h4 className="text-xl font-bold text-gray-900 mt-3 group-hover:text-royalblue transition-colors">
-                          {card.company}
-                        </h4>
-                      </div>
+                  {card.logo ? (
+                    <Link
+                      href="/transactions"
+                      className="block h-full group"
+                    >
+                      <div className="h-full bg-white border border-gray-200 rounded-xl p-6 shadow-sm group-hover:border-[#c9a55a] group-hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[210px]">
+                        <div>
+                          <span className="text-[11px] font-semibold tracking-wider text-gray-500 uppercase block leading-tight">
+                            {card.type}
+                          </span>
+                          <div className="h-12 flex items-center justify-start mt-4">
+                            <Image
+                              src={card.logo}
+                              alt={card.company}
+                              width={180}
+                              height={44}
+                              className="max-h-10 w-auto max-w-[170px] object-contain object-left group-hover:scale-105 transition-transform"
+                            />
+                          </div>
+                        </div>
 
-                      <div className="pt-4 border-t border-gray-100 mt-4">
-                        <span className="text-2xl font-bold text-[#153147]">
-                          {card.amount}
-                        </span>
+                        <div className="pt-4 border-t border-gray-100 mt-4">
+                          <span className="text-2xl font-bold text-[#153147]">
+                            {card.amount}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="block h-full">
+                      <div className="h-full bg-white border border-gray-200 rounded-xl p-6 shadow-sm transition-all duration-300 flex flex-col justify-between min-h-[210px]">
+                        <div>
+                          <span className="text-[11px] font-semibold tracking-wider text-gray-500 uppercase block leading-tight">
+                            {card.type}
+                          </span>
+                          <div className="h-12 flex items-center justify-start mt-4">
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                              {card.company}
+                            </h4>
+                          </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-gray-100 mt-4">
+                          <span className="text-2xl font-bold text-[#153147]">
+                            {card.amount}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </Link>
+                  )}
                 </div>
               ))}
             </div>

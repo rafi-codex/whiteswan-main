@@ -47,7 +47,7 @@ const NavSheet = ({
           <div className="pt-4">
             <Link href="/choice" onClick={() => setIsOpen(false)}>
               <Button
-                variant="default"
+                variant="white"
                 size="lg"
                 className="font-bold tracking-wider uppercase px-8 py-3.5 text-sm shadow-lg cursor-pointer"
               >

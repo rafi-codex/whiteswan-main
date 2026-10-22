@@ -16,7 +16,7 @@ import {
 import {
   ArrowRight,
   ArrowLeft,
-  CheckCircle2,
+  Check,
   UploadCloud,
   FileText,
   X,
@@ -404,7 +404,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           onClick={() => handleSelectRadio(q.id, opt)}
                           className={`flex items-center justify-between text-left p-3.5 sm:p-4 rounded-xl border text-sm font-medium transition-all duration-150 ${
                             isSelected
-                              ? "bg-blue-600/20 border-blue-400 text-white shadow-md shadow-blue-500/10 font-semibold"
+                              ? "bg-[#c9a55a]/10 border-[#c9a55a] text-white shadow-md shadow-[#c9a55a]/10 font-semibold"
                               : "bg-[#0c131c]/50 border-white/10 text-slate-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
@@ -412,11 +412,11 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           <span
                             className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
                               isSelected
-                                ? "border-blue-400 bg-blue-500 text-white"
+                                ? "border-[#c9a55a] bg-[#c9a55a]/20"
                                 : "border-white/20 bg-white/5"
                             }`}
                           >
-                            {isSelected && <span className="w-2 h-2 rounded-full bg-white" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#c9a55a] stroke-[3]" />}
                           </span>
                         </button>
                       );
@@ -430,7 +430,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                     <select
                       value={answers[q.id] || ""}
                       onChange={(e) => handleDropdownChange(q.id, e.target.value)}
-                      className="w-full bg-[#0c131c] border border-white/20 hover:border-white/30 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer"
+                      className="w-full bg-[#0c131c] border border-white/20 hover:border-white/30 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#c9a55a] focus:border-[#c9a55a] transition-all cursor-pointer"
                     >
                       <option value="" disabled>
                         Select your state...
@@ -462,7 +462,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           onClick={() => handleMultiselect(q.id, opt)}
                           className={`flex items-center justify-between text-left p-3.5 sm:p-4 rounded-xl border text-sm font-medium transition-all duration-150 ${
                             isSelected
-                              ? "bg-blue-600/20 border-blue-400 text-white shadow-md shadow-blue-500/10 font-semibold"
+                              ? "bg-[#c9a55a]/10 border-[#c9a55a] text-white shadow-md shadow-[#c9a55a]/10 font-semibold"
                               : "bg-[#0c131c]/50 border-white/10 text-slate-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
@@ -470,11 +470,11 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           <span
                             className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-colors ${
                               isSelected
-                                ? "border-blue-400 bg-blue-500 text-white"
+                                ? "border-[#c9a55a] bg-[#c9a55a]/20"
                                 : "border-white/20 bg-white/5"
                             }`}
                           >
-                            {isSelected && <CheckCircle2 className="w-4 h-4 text-white" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#c9a55a] stroke-[3]" />}
                           </span>
                         </button>
                       );
@@ -553,7 +553,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                         setContact((prev) => ({ ...prev, firstName: e.target.value }))
                       }
                       placeholder="Jane"
-                      className="w-full bg-[#0c131c] border border-white/15 focus:border-blue-400 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all"
+                      className="w-full bg-[#0c131c] border border-white/15 focus:border-[#c9a55a] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#c9a55a] transition-all"
                     />
                   </div>
 
@@ -569,7 +569,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                         setContact((prev) => ({ ...prev, lastName: e.target.value }))
                       }
                       placeholder="Smith"
-                      className="w-full bg-[#0c131c] border border-white/15 focus:border-blue-400 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all"
+                      className="w-full bg-[#0c131c] border border-white/15 focus:border-[#c9a55a] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#c9a55a] transition-all"
                     />
                   </div>
 
@@ -585,7 +585,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                         setContact((prev) => ({ ...prev, email: e.target.value }))
                       }
                       placeholder="jane@company.com"
-                      className="w-full bg-[#0c131c] border border-white/15 focus:border-blue-400 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all"
+                      className="w-full bg-[#0c131c] border border-white/15 focus:border-[#c9a55a] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#c9a55a] transition-all"
                     />
                   </div>
 
@@ -600,7 +600,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                         setContact((prev) => ({ ...prev, phone: e.target.value }))
                       }
                       placeholder="+1 (555) 000-0000"
-                      className="w-full bg-[#0c131c] border border-white/15 focus:border-blue-400 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all"
+                      className="w-full bg-[#0c131c] border border-white/15 focus:border-[#c9a55a] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#c9a55a] transition-all"
                     />
                   </div>
 
@@ -616,7 +616,7 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                         setContact((prev) => ({ ...prev, companyName: e.target.value }))
                       }
                       placeholder="Acme Corp"
-                      className="w-full bg-[#0c131c] border border-white/15 focus:border-blue-400 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-blue-400 transition-all"
+                      className="w-full bg-[#0c131c] border border-white/15 focus:border-[#c9a55a] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-[#c9a55a] transition-all"
                     />
                   </div>
                 </div>

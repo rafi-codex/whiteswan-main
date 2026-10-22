@@ -14,6 +14,7 @@ interface TransactionRow {
   amount: string;
   industry: string;
   type: string;
+  website?: string;
 }
 
 interface TransactionSection {
@@ -30,18 +31,21 @@ const TRANSACTION_SECTIONS: TransactionSection[] = [
         amount: "$50.0M",
         industry: "Energy & Utilities / Renewable Energy",
         type: "Advisory – Equity",
+        website: "https://www.athonenergia.com.br",
       },
       {
         client: "Solartia",
         amount: "$300.0M",
         industry: "Energy & Utilities / Infrastructure / Renewable Energy",
         type: "Advisory – Project Finance & Equity",
+        website: "https://www.solartia.com",
       },
       {
         client: "Zero Waste Inc.",
         amount: "$75.0M",
         industry: "Energy & Utilities / Renewable Energy",
         type: "Advisory – Project Finance & Equity",
+        website: "https://zerowastellc.com/",
       },
       {
         client: "Oil & Gas Operator (GOM)*",
@@ -54,6 +58,7 @@ const TRANSACTION_SECTIONS: TransactionSection[] = [
         amount: "Undisclosed",
         industry: "Energy & Utilities / Waste Water Treatment",
         type: "Advisory – Equity",
+        website: "https://www.ixpower.com",
       },
     ],
   },
@@ -62,15 +67,17 @@ const TRANSACTION_SECTIONS: TransactionSection[] = [
     rows: [
       {
         client: "ExLabs",
-        amount: "$7.0M",
+        amount: "Undisclosed",
         industry: "Aerospace / Space",
         type: "Advisory – Venture Equity",
+        website: "https://exlabs.space/",
       },
       {
         client: "Orbital Transports",
         amount: "Undisclosed",
         industry: "SaaS / Digital Marketplace / Aerospace & Defense",
         type: "Advisory – Equity",
+        website: "https://www.orbitaltransports.com",
       },
     ],
   },
@@ -82,6 +89,7 @@ const TRANSACTION_SECTIONS: TransactionSection[] = [
         amount: "Undisclosed",
         industry: "Home Services / Plumbing & HVAC",
         type: "Advisory – Debt Restructuring",
+        website: "https://www.alphaleteplumbing.com",
       },
       {
         client: "Consumer Products Platform*",
@@ -105,18 +113,21 @@ const TRANSACTION_SECTIONS: TransactionSection[] = [
         amount: "$9.0M",
         industry: "Consumer Goods / Custom Apparel & Printing",
         type: "Advisory – Debt",
+        website: "https://www.undergroundshirts.com",
       },
       {
         client: "Boom Mobile",
         amount: "$7.0M",
         industry: "Telecommunications / Wireless Services",
         type: "Advisory – Equity & Debt",
+        website: "https://boom.us/",
       },
       {
         client: "The AIM Organization",
         amount: "Undisclosed",
         industry: "Healthcare Services",
         type: "Advisory – Debt Restructuring + Venture Equity",
+        website: "https://www.theaimorganization.com",
       },
     ],
   },
@@ -187,7 +198,18 @@ export default function TransactionsPage() {
                         className="hover:bg-white/[0.02] transition-colors"
                       >
                         <td className="py-3.5 pr-4 font-bold text-white whitespace-nowrap">
-                          {row.client}
+                          {row.website ? (
+                            <a
+                              href={row.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-[#c9a55a] transition-colors underline-offset-4 hover:underline"
+                            >
+                              {row.client}
+                            </a>
+                          ) : (
+                            row.client
+                          )}
                         </td>
                         <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">
                           {row.amount}
@@ -232,7 +254,7 @@ export default function TransactionsPage() {
         >
           <Link
             href="/choice"
-            className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
+            className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
           >
             I&apos;M READY TO RAISE
           </Link>

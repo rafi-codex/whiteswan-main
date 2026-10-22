@@ -78,7 +78,7 @@ function ProfileContent() {
           <div className="pt-4">
             <Link
               href="/choice"
-              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
+              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
             >
               I&apos;M READY TO RAISE
             </Link>
@@ -150,6 +150,9 @@ function ProfileContent() {
                       alt={item.title}
                       width={160}
                       height={160}
+                      style={{
+                        objectPosition: item.slug === "simrin-kapoor" ? "center 18%" : undefined,
+                      }}
                       className="w-full h-full rounded-full object-cover bg-slate-900 transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
@@ -212,6 +215,9 @@ function ProfileContent() {
                     alt={selectedMember.title}
                     width={180}
                     height={180}
+                    style={{
+                      objectPosition: selectedMember.slug === "simrin-kapoor" ? "center 18%" : undefined,
+                    }}
                     className="w-full h-full rounded-full object-cover bg-slate-900"
                   />
                 </div>
@@ -305,7 +311,7 @@ function ProfileContent() {
       >
         <Link
           href="/choice"
-          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
+          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
         >
           I&apos;M READY TO RAISE
         </Link>

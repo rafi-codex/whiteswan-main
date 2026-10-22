@@ -33,6 +33,9 @@ const Team = () => {
                       alt={item.title}
                       width={200}
                       height={200}
+                      style={{
+                        objectPosition: item.slug === "simrin-kapoor" ? "center 18%" : undefined,
+                      }}
                       className="object-cover bg-royalblue rounded-full aspect-square"
                       data-aos={getAOSAnimation({ index: item.id })}
                     />

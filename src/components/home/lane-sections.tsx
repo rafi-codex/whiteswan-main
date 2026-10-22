@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import AOS from "aos";
 import { Button } from "../ui/button";
 
 interface LaneBoxState {
@@ -23,12 +24,25 @@ const LaneSections = () => {
 
   const [activeLane, setActiveLane] = useState<keyof LaneBoxState>("space");
 
+  const refreshAOS = () => {
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        try {
+          AOS.refresh();
+        } catch {
+          // ignore if AOS not initialized
+        }
+      }, 350);
+    }
+  };
+
   const toggleBox = (lane: keyof LaneBoxState) => {
     setActiveLane(lane);
     setOpenBoxes((prev) => ({
       ...prev,
       [lane]: !prev[lane],
     }));
+    refreshAOS();
   };
 
   const scrollToLane = (lane: keyof LaneBoxState) => {
@@ -39,16 +53,20 @@ const LaneSections = () => {
       [lane]: true,
     }));
 
-    // Allow React state update to apply before scrolling into view
+    // Smooth scroll with fixed navbar height offset (~90px)
     setTimeout(() => {
       const element = document.getElementById(`${lane}-lane`);
       if (element) {
-        element.scrollIntoView({
+        const navOffset = 90;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - navOffset,
           behavior: "smooth",
-          block: "start",
         });
       }
     }, 60);
+
+    refreshAOS();
   };
 
   return (
@@ -80,8 +98,6 @@ const LaneSections = () => {
             <button
               type="button"
               onClick={() => scrollToLane("space")}
-              data-aos="fade-up"
-              data-aos-delay="200"
               className={`group flex flex-col justify-center items-center text-center p-6 sm:p-7 rounded-2xl border transition-all duration-300 shadow-lg cursor-pointer ${
                 activeLane === "space"
                   ? "bg-[#202b3d] border-[#4a77aa] ring-1 ring-[#4a77aa]/50 shadow-xl shadow-[#4a77aa]/10"
@@ -110,8 +126,6 @@ const LaneSections = () => {
             <button
               type="button"
               onClick={() => scrollToLane("energy")}
-              data-aos="fade-up"
-              data-aos-delay="300"
               className={`group flex flex-col justify-center items-center text-center p-6 sm:p-7 rounded-2xl border transition-all duration-300 shadow-lg cursor-pointer ${
                 activeLane === "energy"
                   ? "bg-[#202b3d] border-[#4a77aa] ring-1 ring-[#4a77aa]/50 shadow-xl shadow-[#4a77aa]/10"
@@ -119,10 +133,10 @@ const LaneSections = () => {
               }`}
             >
               <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 transition-colors group-hover:text-white">
-                I&apos;m an energy transition company
+                I&apos;m in energy or infrastructure
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                EV charging, storage, solar, U.S. or international
+                U.S. or international
               </p>
               <div
                 className={`mt-3 text-xs font-semibold flex items-center gap-1 transition-all ${
@@ -140,8 +154,6 @@ const LaneSections = () => {
             <button
               type="button"
               onClick={() => scrollToLane("trades")}
-              data-aos="fade-up"
-              data-aos-delay="400"
               className={`group flex flex-col justify-center items-center text-center p-6 sm:p-7 rounded-2xl border transition-all duration-300 shadow-lg cursor-pointer ${
                 activeLane === "trades"
                   ? "bg-[#202b3d] border-[#4a77aa] ring-1 ring-[#4a77aa]/50 shadow-xl shadow-[#4a77aa]/10"
@@ -173,7 +185,6 @@ const LaneSections = () => {
           {/* Box 1: Space */}
           <div
             id="space-lane"
-            data-aos="fade-up"
             className={`scroll-mt-24 sm:scroll-mt-28 rounded-2xl border transition-all duration-300 overflow-hidden shadow-xl ${
               activeLane === "space"
                 ? "bg-[#1c2433] border-[#4a77aa]/80 ring-1 ring-[#4a77aa]/30"
@@ -191,11 +202,15 @@ const LaneSections = () => {
                   Raising Capital for Space Companies
                 </h3>
                 <div className="bg-[#4a77aa] h-1.5 w-24 rounded-full mt-3 mb-2" />
-                {!openBoxes.space && (
-                  <p className="text-sm sm:text-base text-slate-400 mt-2 line-clamp-1 leading-relaxed">
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    !openBoxes.space ? "max-h-20 opacity-100 mt-2" : "max-h-0 opacity-0 mt-0"
+                  }`}
+                >
+                  <p className="text-sm sm:text-base text-slate-400 line-clamp-1 leading-relaxed">
                     Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: &ldquo;Love what you&apos;re doing...&rdquo;
                   </p>
-                )}
+                </div>
               </div>
               <div className="shrink-0 p-2 sm:p-2.5 rounded-full bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white transition-all mt-1 sm:mt-0">
                 <ChevronDown
@@ -206,19 +221,25 @@ const LaneSections = () => {
               </div>
             </button>
 
-            {openBoxes.space && (
-              <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-2 border-t border-white/5">
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed pt-2 font-normal">
-                  Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: &ldquo;Love what you&apos;re doing. Not the right stage. Come back when you have a lead.&rdquo; Plenty of interest, but no checks. That&apos;s one of the gaps we close. Every investor has a buy box. We&apos;ve spoken with 500+ who back space, and we only bring you to the ones who fit. Our team is FINRA-licensed, so investors and founders know the process is clean and protected. Where debt fits better, we arrange that too. White-glove service from an experienced team.
-                </p>
+            {/* Smooth Collapsible Content using CSS Grid */}
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                openBoxes.space ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 pointer-events-none"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-2 border-t border-white/5">
+                  <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed pt-2 font-normal">
+                    Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: &ldquo;Love what you&apos;re doing. Not the right stage. Come back when you have a lead.&rdquo; Plenty of interest, but no checks. That&apos;s one of the gaps we close. Every investor has a buy box. We&apos;ve spoken with 500+ who back space, and we only bring you to the ones who fit. Our team is FINRA-licensed, so investors and founders know the process is clean and protected. Where debt fits better, we arrange that too. White-glove service from an experienced team.
+                  </p>
+                </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Box 2: Energy */}
           <div
             id="energy-lane"
-            data-aos="fade-up"
             className={`scroll-mt-24 sm:scroll-mt-28 rounded-2xl border transition-all duration-300 overflow-hidden shadow-xl ${
               activeLane === "energy"
                 ? "bg-[#1c2433] border-[#4a77aa]/80 ring-1 ring-[#4a77aa]/30"
@@ -236,11 +257,15 @@ const LaneSections = () => {
                   Energy Transition Infrastructure
                 </h3>
                 <div className="bg-[#4a77aa] h-1.5 w-24 rounded-full mt-3 mb-2" />
-                {!openBoxes.energy && (
-                  <p className="text-sm sm:text-base text-slate-400 mt-2 line-clamp-1 leading-relaxed">
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    !openBoxes.energy ? "max-h-20 opacity-100 mt-2" : "max-h-0 opacity-0 mt-0"
+                  }`}
+                >
+                  <p className="text-sm sm:text-base text-slate-400 line-clamp-1 leading-relaxed">
                     Raising capital for U.S. energy developers &amp; U.S. capital for international energy platforms...
                   </p>
-                )}
+                </div>
               </div>
               <div className="shrink-0 p-2 sm:p-2.5 rounded-full bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white transition-all mt-1 sm:mt-0">
                 <ChevronDown
@@ -251,37 +276,43 @@ const LaneSections = () => {
               </div>
             </button>
 
-            {openBoxes.energy && (
-              <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-4 border-t border-white/5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-2">
-                  {/* Left Column */}
-                  <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
-                    <h4 className="text-lg sm:text-xl font-bold text-white">
-                      Raising Capital for U.S. Energy Developers
-                    </h4>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                      You have projects ready to build, but deposits, engineering and interconnection are coming off your own balance sheet. Lenders want equity first. Investors want proof first. We raise equity for EV and fleet charging, battery storage and solar developers, then line up debt to stretch it further. We&apos;re licensed and regulated, so investors and developers are protected at every step.
-                    </p>
-                  </div>
+            {/* Smooth Collapsible Content using CSS Grid */}
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                openBoxes.energy ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 pointer-events-none"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-4 border-t border-white/5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-2">
+                    {/* Left Column */}
+                    <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
+                      <h4 className="text-lg sm:text-xl font-bold text-white">
+                        Raising Capital for U.S. Energy Developers
+                      </h4>
+                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                        You have projects ready to build, but deposits, engineering and interconnection are coming off your own balance sheet. Lenders want equity first. Investors want proof first. Big funds say you don’t fit the box. And the tax-credit clock keeps ticking. You might want capital early, before the banks will look, and you need that first 30% so the debt follows. Or maybe you want to close deals actually knowing you’ll be able to fund them, and the whole time the team wants to keep as much equity as possible. These are some of the problems we have solved for our partners. We raise the equity and debt that gets projects built for EV and fleet charging, battery storage, solar, distributed generation, EV fleet leasing, vehicle conversions, hydropower, oil and gas, sustainable infrastructure, water and waste developers, etc. Our team is FINRA-licensed. Every raise runs under the SEC rules, compliant, clean, and prepared for the next stage of development.
+                      </p>
+                    </div>
 
-                  {/* Right Column */}
-                  <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
-                    <h4 className="text-lg sm:text-xl font-bold text-white">
-                      U.S. Capital for International Energy Platforms
-                    </h4>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                      Capital at home is exhausted or expensive. Your banks don&apos;t cover U.S. investors. And the big funds tell you: &ldquo;Great platform. Too small for our minimum check.&rdquo; We solve that. We raise equity from U.S. family offices, wealth managers and institutions, and structure the deal so they can invest. Every raise runs under SEC rules and FINRA oversight, and we work through the cross-border regulatory complexity so the deal stays clean.
-                    </p>
+                    {/* Right Column */}
+                    <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
+                      <h4 className="text-lg sm:text-xl font-bold text-white">
+                        U.S. Capital for International Energy Platforms
+                      </h4>
+                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                        Capital at home is exhausted or expensive. Your banks don&apos;t cover U.S. investors. And the big funds tell you: &ldquo;Great platform. Too small for our minimum check.&rdquo; Private equity will buy you tomorrow, but not for a minority stake, and you&apos;re not giving up control. We have even been told, &ldquo;We need some advice on how to approach American investors.&rdquo; Or, &ldquo;We’re not professional fundraisers. We’re company operators.&rdquo; We have solved all those problems for our partners, and many more. We raise equity from U.S. family offices, wealth managers and institutions, etc. We help structure the deal so they can and want to invest. We get you in the door with the right U.S. families and funds. We shape the deck and make sure the data room has everything needed. You show up to calls with us and the investors and talk about what makes you great. We do the rest. And the truth is, you probably only need three or four families with $10 million each, not 100 meetings. Our focus is efficiency and outcome, all operated through a licensed and compliant framework with FINRA and the SEC. We’ve also worked with cross-border FINRA organizations.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Box 3: Trades */}
           <div
             id="trades-lane"
-            data-aos="fade-up"
             className={`scroll-mt-24 sm:scroll-mt-28 rounded-2xl border transition-all duration-300 overflow-hidden shadow-xl ${
               activeLane === "trades"
                 ? "bg-[#1c2433] border-[#4a77aa]/80 ring-1 ring-[#4a77aa]/30"
@@ -299,11 +330,15 @@ const LaneSections = () => {
                   For Trade Business Owners
                 </h3>
                 <div className="bg-[#4a77aa] h-1.5 w-24 rounded-full mt-3 mb-2" />
-                {!openBoxes.trades && (
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    !openBoxes.trades ? "max-h-20 opacity-100 mt-2" : "max-h-0 opacity-0 mt-0"
+                  }`}
+                >
                   <p className="text-sm sm:text-base text-slate-400 mt-2 line-clamp-1 leading-relaxed">
-                    Selling your business to private equity &amp; growth capital for founder-led businesses...
+                    Growth capital for founder-led businesses &amp; selling your business to private equity...
                   </p>
-                )}
+                </div>
               </div>
               <div className="shrink-0 p-2 sm:p-2.5 rounded-full bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white transition-all mt-1 sm:mt-0">
                 <ChevronDown
@@ -314,50 +349,69 @@ const LaneSections = () => {
               </div>
             </button>
 
-            {openBoxes.trades && (
-              <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-4 border-t border-white/5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-2">
-                  {/* Left Column */}
-                  <div className="space-y-4 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none flex flex-col justify-between">
-                    <div className="space-y-3">
+            {/* Smooth Collapsible Content using CSS Grid */}
+            <div
+              className={`grid transition-all duration-300 ease-in-out ${
+                openBoxes.trades ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 pointer-events-none"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-4 border-t border-white/5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-2">
+                    {/* Left Column: Growth Capital */}
+                    <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
                       <h4 className="text-lg sm:text-xl font-bold text-white">
-                        Selling Your Business to Private Equity
+                        Growth Capital for Founder-Led Businesses
                       </h4>
                       <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                        Buyers send letters. Brokers call. You still don&apos;t know which buyers are serious, and you&apos;re not giving it away for pennies. We have signed agreements with private equity firms that want to buy companies like yours. The buyer pays our fee, so finding out costs you NOTHING. No listing, no auction, no word to your employees or customers. Only serious buyers, chosen for fit with your team, not just the biggest check, unless that&apos;s what you&apos;re after. There&apos;s no obligation. If the number&apos;s wrong, walk away. You&apos;ll hear directly from serious buyers before you decide anything.
+                        The bank capped you out, or told you that you don&apos;t fit the box. Maybe there&apos;s another company you want to buy. Maybe a big contract landed faster than your cash can keep up, or you&apos;re slow-playing a backlog you can&apos;t fund yet. Maybe the SBA is tapped out. Maybe you&apos;re paying interest rates that hurt. And every investor or lender says, &ldquo;Sounds great,&rdquo; on the first call. Then, &ldquo;This is not a fit,&rdquo; on the second. Or maybe at this point you&apos;d rather not even bring in equity partners? You just want flexible debt. And like so many owners tell us, &ldquo;We&apos;re not professional fundraisers. We&apos;re company operators.&rdquo; At White Swan, you just give us the info. We take care of it from there. We raise growth equity and financing structured around how you want to grow, not what the bank will allow. You&apos;re not just looking for a better rate. You want better terms, and lenders who keep funding your deal flow, including your next acquisition. We package the business, build the raise and take you to the allocators. All you do is show up and tell them why your company wins. Every deal runs through a FINRA-regulated process, start to finish.
                       </p>
                     </div>
-                    {/* Small Print under left column */}
-                    <p className="text-xs text-slate-400 italic pt-3 border-t border-white/10 mt-2">
-                      Introductions to private equity buyers are provided by White Swan Advisors LLC and are not offered through Finalis Securities LLC.
-                    </p>
-                  </div>
 
-                  {/* Right Column */}
-                  <div className="space-y-3 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
-                    <h4 className="text-lg sm:text-xl font-bold text-white">
-                      Growth Capital for Founder-Led Businesses
-                    </h4>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                      The bank capped you out, or told you that you don&apos;t fit the box. Maybe there&apos;s another company you want to buy. Maybe a big contract landed faster than your cash can keep up, or you&apos;re slow-playing a backlog you can&apos;t fund yet. We raise growth equity and financing structured around how you want to grow, not what the bank will allow. Every deal runs through a FINRA-regulated process, start to finish.
-                    </p>
+                    {/* Right Column: Selling to Private Equity */}
+                    <div className="space-y-4 p-5 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <h4 className="text-lg sm:text-xl font-bold text-white">
+                          Selling Your Business to Private Equity
+                        </h4>
+                        <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                          Buyers send letters. Brokers call. You still don&apos;t know which buyers are serious, and you&apos;re not giving it away for pennies. We have agreements with private equity firms that want to buy companies like yours. The buyer pays our fee, so finding out costs you NOTHING. No listing, no auction, no word to your employees or customers. Only serious buyers, matched for fit with your team, not just the biggest check, unless that&apos;s what you&apos;re after. There&apos;s no obligation. If the number&apos;s wrong, walk away. You&apos;ll hear directly from serious buyers before you decide anything.
+                        </p>
+                      </div>
+                      {/* Small Print under right column */}
+                      <p className="text-xs text-slate-400 italic pt-3 border-t border-white/10 mt-2">
+                        Introductions to private equity buyers are provided by White Swan Advisors LLC and are not offered through Finalis Securities LLC.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Button under the three boxes */}
-          <div data-aos="fade-up" className="pt-10 sm:pt-14 flex justify-center">
+          <div className="pt-12 sm:pt-16 flex flex-col items-center justify-center text-center space-y-3">
             <Link href="/choice">
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider px-8 sm:px-10 py-4 text-base shadow-xl hover:shadow-[#4a77aa]/30 hover:scale-[1.02] transition-all cursor-pointer"
+                className="font-bold tracking-wider uppercase px-9 py-4 text-sm sm:text-base shadow-xl hover:shadow-[#4a77aa]/30 hover:scale-[1.02] transition-all cursor-pointer"
               >
-                Book a Session
+                I&apos;M READY TO RAISE
               </Button>
             </Link>
+            <p className="text-xs sm:text-sm text-gray-400 font-normal">
+              We run the raise, you run your company.
+            </p>
+            <div className="pt-2">
+              <Image
+                src="/wsa-logo-vector.svg"
+                alt="White Swan Advisors Logo"
+                width={80}
+                height={80}
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-md opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
         </div>
       </div>

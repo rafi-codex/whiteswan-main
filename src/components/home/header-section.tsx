@@ -1,21 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const HeaderSection = ({ src }: { src: string }) => {
+const HERO_VIDEOS = [
+  "/videos/hero/hero-1.mp4",
+  "/videos/hero/hero-2.mp4",
+  "/videos/hero/hero-3.mp4",
+  "/videos/hero/hero-4.mp4",
+];
+
+const HeaderSection = () => {
+  const [videoIndex, setVideoIndex] = useState(0);
+
+  const handleVideoEnded = () => {
+    setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+  };
+
   return (
     <section className="flex relative flex-col justify-center min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 text-white overflow-hidden bg-[#0c131c]">
       <video
+        key={HERO_VIDEOS[videoIndex]}
         autoPlay
-        loop
         muted
         playsInline
+        onEnded={handleVideoEnded}
         className="absolute inset-0 w-full h-full object-cover filter brightness-[.25] z-0"
       >
-        <source src={src} type="video/mp4" />
+        <source src={HERO_VIDEOS[videoIndex]} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
@@ -51,8 +65,7 @@ const HeaderSection = ({ src }: { src: string }) => {
               Space founders. Energy developers. Trade business owners.
             </h5>
             <p className="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed font-normal">
-              We find the investors and lenders who fit your raise. Selling a trade business instead?
-              We introduce you to private equity buyers, at no cost to you.
+              You take the investor calls. We do everything else. Selling a trade business instead? We introduce you to private equity buyers, at no cost to you.
             </p>
           </div>
 
@@ -97,7 +110,7 @@ const HeaderSection = ({ src }: { src: string }) => {
                 $1B+
               </div>
               <div className="text-xs sm:text-sm text-gray-300 mt-1 font-normal">
-                Aggregate 2025 transaction volume
+                Aggregate transaction volume
               </div>
             </div>
 
@@ -112,7 +125,7 @@ const HeaderSection = ({ src }: { src: string }) => {
 
             <div className="bg-[#1a2230]/90 border border-[#2b384e] rounded-xl p-5 sm:p-6 backdrop-blur-md shadow-xl transition-transform hover:scale-[1.02]">
               <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                2,755
+                5,000+
               </div>
               <div className="text-xs sm:text-sm text-gray-300 mt-1 font-normal">
                 Investor network
