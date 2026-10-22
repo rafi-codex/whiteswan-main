@@ -1,36 +1,63 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const HERO_VIDEOS = [
   "/videos/hero/hero-1.mp4",
-  "/videos/hero/hero-2.mp4",
-  "/videos/hero/hero-3.mp4",
   "/videos/hero/hero-4.mp4",
+  "/videos/hero/hero-3.mp4",
 ];
 
 const HeaderSection = () => {
   const [videoIndex, setVideoIndex] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const handleVideoEnded = () => {
-    setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
-  };
+  useEffect(() => {
+    // 7.5 seconds per clip loop (5-10 seconds per clip rule)
+    const timer = setInterval(() => {
+      setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+    }, 7500);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    videoRefs.current.forEach((el, idx) => {
+      if (!el) return;
+      if (idx === videoIndex) {
+        el.currentTime = 0;
+        el.play().catch(() => {});
+      } else {
+        el.pause();
+      }
+    });
+  }, [videoIndex]);
 
   return (
     <section className="flex relative flex-col justify-center min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 text-white overflow-hidden bg-[#0c131c]">
-      <video
-        key={HERO_VIDEOS[videoIndex]}
-        autoPlay
-        muted
-        playsInline
-        onEnded={handleVideoEnded}
-        className="absolute inset-0 w-full h-full object-cover filter brightness-[.25] z-0"
-      >
-        <source src={HERO_VIDEOS[videoIndex]} type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+        {HERO_VIDEOS.map((src, idx) => (
+          <video
+            key={src}
+            ref={(el) => {
+              videoRefs.current[idx] = el;
+            }}
+            autoPlay={idx === 0}
+            muted
+            playsInline
+            preload="auto"
+            className={cn(
+              "absolute inset-0 w-full h-full object-cover filter brightness-[.25] transition-opacity duration-1000",
+              idx === videoIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+            )}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ))}
+      </div>
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
       <div className="section-container relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 lg:gap-16">

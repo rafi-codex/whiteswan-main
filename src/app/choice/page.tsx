@@ -49,7 +49,7 @@ function ChoiceContent() {
             <div className="pt-8 space-y-3">
               <Link
                 href={`/apply/space${queryPrefix}`}
-                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] border border-[#c9a55a] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:bg-slate-100 hover:shadow-[0_0_20px_rgba(201,165,90,0.6)] transition-all duration-200 active:scale-[0.98] text-center"
+                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] hover:bg-royalblue hover:text-white border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:shadow-[0_0_24px_rgba(201,165,90,0.7)] transition-all duration-200 active:scale-[0.98] text-center"
               >
                 I want to raise capital
               </Link>
@@ -81,7 +81,7 @@ function ChoiceContent() {
             <div className="pt-8 space-y-3">
               <Link
                 href={`/apply/energy${queryPrefix}`}
-                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] border border-[#c9a55a] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:bg-slate-100 hover:shadow-[0_0_20px_rgba(201,165,90,0.6)] transition-all duration-200 active:scale-[0.98] text-center"
+                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] hover:bg-royalblue hover:text-white border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:shadow-[0_0_24px_rgba(201,165,90,0.7)] transition-all duration-200 active:scale-[0.98] text-center"
               >
                 I want to raise capital
               </Link>
@@ -113,7 +113,7 @@ function ChoiceContent() {
             <div className="pt-8 space-y-3">
               <Link
                 href={`/apply/trades-raise${queryPrefix}`}
-                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] border border-[#c9a55a] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:bg-slate-100 hover:shadow-[0_0_20px_rgba(201,165,90,0.6)] transition-all duration-200 active:scale-[0.98] text-center"
+                className="w-full flex items-center justify-center py-3.5 px-4 rounded-xl font-bold text-sm sm:text-[15px] bg-white text-[#0c131c] hover:bg-royalblue hover:text-white border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_15px_rgba(201,165,90,0.45)] hover:shadow-[0_0_24px_rgba(201,165,90,0.7)] transition-all duration-200 active:scale-[0.98] text-center"
               >
                 I want to raise capital
               </Link>

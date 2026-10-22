@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { NAV_LINKS } from "../../constants";
-import CalendlyEmbed from "./calendly";
 
 const Footer = () => {
   return (
@@ -35,14 +34,6 @@ const Footer = () => {
                 {item.name}
               </Link>
             ))}
-            <CalendlyEmbed>
-              <button
-                type="button"
-                className="text-gray-300 hover:text-white truncate cursor-pointer bg-transparent border-none p-0 text-[15px]"
-              >
-                Contact
-              </button>
-            </CalendlyEmbed>
             <Link href="/choice" className="text-gray-300 hover:text-white truncate">
               I&apos;M READY TO RAISE
             </Link>

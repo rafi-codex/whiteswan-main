@@ -305,9 +305,9 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
           </span>
           <span className="text-white font-medium">{formConfig.badge}</span>
         </div>
-        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+        <div className="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-blue-500 to-[#4a77aa] transition-all duration-500 ease-out rounded-full"
+            className="h-full bg-gradient-to-r from-[#c9a55a] via-[#dfbb72] to-[#c9a55a] shadow-[0_0_14px_rgba(201,165,90,0.6)] transition-all duration-500 ease-out rounded-full"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -380,9 +380,6 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
               >
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">
-                    <span className="text-slate-400 font-mono text-sm mr-2">
-                      {q.id}.
-                    </span>
                     {q.title}
                   </h3>
                   {q.required && (
@@ -404,19 +401,19 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           onClick={() => handleSelectRadio(q.id, opt)}
                           className={`flex items-center justify-between text-left p-3.5 sm:p-4 rounded-xl border text-sm font-medium transition-all duration-150 ${
                             isSelected
-                              ? "bg-[#c9a55a]/10 border-[#c9a55a] text-white shadow-md shadow-[#c9a55a]/10 font-semibold"
+                              ? "bg-[#c9a55a]/15 border-2 border-[#c9a55a] text-white shadow-lg shadow-[#c9a55a]/20 font-semibold ring-1 ring-[#c9a55a]/30"
                               : "bg-[#0c131c]/50 border-white/10 text-slate-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
                           <span className="pr-2">{opt}</span>
                           <span
-                            className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                            className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 transition-all ${
                               isSelected
-                                ? "border-[#c9a55a] bg-[#c9a55a]/20"
-                                : "border-white/20 bg-white/5"
+                                ? "border-2 border-[#c9a55a] bg-[#c9a55a] shadow-[0_0_10px_rgba(201,165,90,0.5)]"
+                                : "border-2 border-white/20 bg-white/5"
                             }`}
                           >
-                            {isSelected && <Check className="w-3.5 h-3.5 text-[#c9a55a] stroke-[3]" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#0c131c] stroke-[3.5]" />}
                           </span>
                         </button>
                       );
@@ -462,19 +459,19 @@ export default function MultiStepForm({ formConfig }: MultiStepFormProps) {
                           onClick={() => handleMultiselect(q.id, opt)}
                           className={`flex items-center justify-between text-left p-3.5 sm:p-4 rounded-xl border text-sm font-medium transition-all duration-150 ${
                             isSelected
-                              ? "bg-[#c9a55a]/10 border-[#c9a55a] text-white shadow-md shadow-[#c9a55a]/10 font-semibold"
+                              ? "bg-[#c9a55a]/15 border-2 border-[#c9a55a] text-white shadow-lg shadow-[#c9a55a]/20 font-semibold ring-1 ring-[#c9a55a]/30"
                               : "bg-[#0c131c]/50 border-white/10 text-slate-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
                           <span className="pr-2">{opt}</span>
                           <span
-                            className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-colors ${
+                            className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 transition-all ${
                               isSelected
-                                ? "border-[#c9a55a] bg-[#c9a55a]/20"
-                                : "border-white/20 bg-white/5"
+                                ? "border-2 border-[#c9a55a] bg-[#c9a55a] shadow-[0_0_10px_rgba(201,165,90,0.5)]"
+                                : "border-2 border-white/20 bg-white/5"
                             }`}
                           >
-                            {isSelected && <Check className="w-3.5 h-3.5 text-[#c9a55a] stroke-[3]" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#0c131c] stroke-[3.5]" />}
                           </span>
                         </button>
                       );
