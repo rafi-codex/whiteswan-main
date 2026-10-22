@@ -74,7 +74,7 @@ const HeaderSection = () => {
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base shadow-lg hover:shadow-[#4a77aa]/30 cursor-pointer"
+                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] cursor-pointer transition-all duration-200"
               >
                 I&apos;M READY TO RAISE
               </Button>

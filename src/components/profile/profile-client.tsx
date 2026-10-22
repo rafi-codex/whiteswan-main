@@ -78,7 +78,7 @@ function ProfileContent() {
           <div className="pt-4">
             <Link
               href="/choice"
-              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
+              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-slate-100 hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
             >
               I&apos;M READY TO RAISE
             </Link>
@@ -236,7 +236,7 @@ function ProfileContent() {
                 <div className="pt-6">
                   <Link
                     href="/choice"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded border border-[#c9a55a] text-[#c9a55a] hover:bg-[#c9a55a]/10 hover:border-[#dfbb72] text-xs font-semibold tracking-wider uppercase transition-all"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded border border-[#c9a55a] text-[#c9a55a] hover:bg-[#c9a55a]/10 hover:border-[#dfbb72] text-xs font-semibold tracking-wider uppercase shadow-[0_0_12px_rgba(201,165,90,0.35)] hover:shadow-[0_0_18px_rgba(201,165,90,0.6)] transition-all"
                   >
                     <span>I&apos;M READY TO RAISE</span>
                     <span className="text-sm">→</span>
@@ -305,7 +305,7 @@ function ProfileContent() {
       >
         <Link
           href="/choice"
-          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] font-bold text-sm sm:text-base tracking-wider uppercase shadow-2xl hover:bg-slate-100 hover:shadow-white/10 transition-all duration-200 active:scale-[0.98]"
+          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-slate-100 hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
         >
           I&apos;M READY TO RAISE
         </Link>

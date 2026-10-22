@@ -395,7 +395,7 @@ const LaneSections = () => {
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-9 py-4 text-sm sm:text-base shadow-xl hover:shadow-[#4a77aa]/30 hover:scale-[1.02] transition-all cursor-pointer"
+                className="font-bold tracking-wider uppercase px-9 py-4 text-sm sm:text-base border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] hover:scale-[1.02] transition-all cursor-pointer"
               >
                 I&apos;M READY TO RAISE
               </Button>

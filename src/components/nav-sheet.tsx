@@ -49,7 +49,7 @@ const NavSheet = ({
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-8 py-3.5 text-sm shadow-lg cursor-pointer"
+                className="font-bold tracking-wider uppercase px-8 py-3.5 text-sm border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_18px_rgba(201,165,90,0.5)] hover:shadow-[0_0_26px_rgba(201,165,90,0.75)] cursor-pointer transition-all duration-200"
               >
                 I&apos;M READY TO RAISE
               </Button>

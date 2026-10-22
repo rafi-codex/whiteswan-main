@@ -25,7 +25,7 @@ const HowItWorks = () => {
                 <Button
                   variant="white"
                   size="lg"
-                  className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base shadow-lg hover:shadow-royalblue/30"
+                  className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_18px_rgba(201,165,90,0.5)] hover:shadow-[0_0_28px_rgba(201,165,90,0.75)] hover:scale-[1.02] transition-all cursor-pointer"
                 >
                   I&apos;M READY TO RAISE
                 </Button>
