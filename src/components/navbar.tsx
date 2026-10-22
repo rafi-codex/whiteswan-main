@@ -56,7 +56,7 @@ const Navbar = () => {
             <Button
               variant="white"
               size="sm"
-              className="font-bold tracking-wider uppercase px-5 py-2 text-xs sm:text-[13px] border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_14px_rgba(201,165,90,0.45)] hover:shadow-[0_0_22px_rgba(201,165,90,0.7)] cursor-pointer rounded-lg transition-all duration-200"
+              className="font-bold tracking-wider uppercase px-5 py-2 text-xs sm:text-[13px] border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_14px_rgba(201,165,90,0.45)] hover:shadow-[0_0_22px_rgba(201,165,90,0.7)] cursor-pointer rounded-lg transition-all duration-200"
             >
               I&apos;M READY TO RAISE
             </Button>

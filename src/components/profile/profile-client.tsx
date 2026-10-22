@@ -78,7 +78,7 @@ function ProfileContent() {
           <div className="pt-4">
             <Link
               href="/choice"
-              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-royalblue hover:text-white hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
+              className="inline-block px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-white text-[#0c131c] border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-royalblue hover:text-white hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
             >
               I&apos;M READY TO RAISE
             </Link>
@@ -305,7 +305,7 @@ function ProfileContent() {
       >
         <Link
           href="/choice"
-          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-royalblue hover:text-white hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
+          className="inline-block px-10 py-4 rounded-xl bg-white text-[#0c131c] border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] font-bold text-sm sm:text-base tracking-wider uppercase shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:bg-royalblue hover:text-white hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] transition-all duration-200 active:scale-[0.98]"
         >
           I&apos;M READY TO RAISE
         </Link>

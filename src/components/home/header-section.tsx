@@ -6,10 +6,29 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
-const HERO_VIDEOS = [
-  "/videos/hero/hero-1.mp4",
-  "/videos/hero/hero-4.mp4",
-  "/videos/hero/hero-3.mp4",
+interface HeroVideoConfig {
+  src: string;
+  startTime: number;
+  duration?: number;
+  runToEnd?: boolean;
+}
+
+const HERO_VIDEOS: HeroVideoConfig[] = [
+  {
+    src: "/videos/hero/hero-1.mp4",
+    startTime: 0,
+    duration: 25, // runs from 0 to 25th seconds
+  },
+  {
+    src: "/videos/hero/hero-4.mp4", // Brooklyn Bridge
+    startTime: 0,
+    duration: 20, // runs from 0 to 20 seconds
+  },
+  {
+    src: "/videos/hero/hero-3.mp4", // Third video
+    startTime: 8, // starts at eight seconds
+    runToEnd: true, // runs till the end
+  },
 ];
 
 const HeaderSection = () => {
@@ -17,31 +36,42 @@ const HeaderSection = () => {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
-    // 7.5 seconds per clip loop (5-10 seconds per clip rule)
-    const timer = setInterval(() => {
-      setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
-    }, 7500);
-    return () => clearInterval(timer);
-  }, []);
+    const currentConfig = HERO_VIDEOS[videoIndex];
+    const currentEl = videoRefs.current[videoIndex];
 
-  useEffect(() => {
-    videoRefs.current.forEach((el, idx) => {
-      if (!el) return;
-      if (idx === videoIndex) {
-        el.currentTime = 0;
-        el.play().catch(() => {});
-      } else {
-        el.pause();
-      }
-    });
+    if (currentEl) {
+      currentEl.currentTime = currentConfig.startTime;
+      currentEl.play().catch(() => {});
+    }
+
+    // Pause other non-active videos after 1s crossfade completes
+    const pauseTimer = setTimeout(() => {
+      videoRefs.current.forEach((el, idx) => {
+        if (el && idx !== videoIndex) {
+          el.pause();
+        }
+      });
+    }, 1000);
+
+    let advanceTimer: NodeJS.Timeout | null = null;
+    if (currentConfig.duration) {
+      advanceTimer = setTimeout(() => {
+        setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+      }, currentConfig.duration * 1000);
+    }
+
+    return () => {
+      clearTimeout(pauseTimer);
+      if (advanceTimer) clearTimeout(advanceTimer);
+    };
   }, [videoIndex]);
 
   return (
     <section className="flex relative flex-col justify-center min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 text-white overflow-hidden bg-[#0c131c]">
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        {HERO_VIDEOS.map((src, idx) => (
+        {HERO_VIDEOS.map((item, idx) => (
           <video
-            key={src}
+            key={item.src}
             ref={(el) => {
               videoRefs.current[idx] = el;
             }}
@@ -49,12 +79,28 @@ const HeaderSection = () => {
             muted
             playsInline
             preload="auto"
+            onEnded={() => {
+              if (idx === videoIndex && HERO_VIDEOS[idx].runToEnd) {
+                setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+              }
+            }}
+            onTimeUpdate={(e) => {
+              const el = e.currentTarget;
+              if (
+                idx === videoIndex &&
+                HERO_VIDEOS[idx].runToEnd &&
+                el.duration &&
+                el.currentTime >= el.duration - 0.25
+              ) {
+                setVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+              }
+            }}
             className={cn(
               "absolute inset-0 w-full h-full object-cover filter brightness-[.25] transition-opacity duration-1000",
               idx === videoIndex ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
           >
-            <source src={src} type="video/mp4" />
+            <source src={item.src} type="video/mp4" />
           </video>
         ))}
       </div>
@@ -101,7 +147,7 @@ const HeaderSection = () => {
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] cursor-pointer transition-all duration-200"
+                className="font-bold tracking-wider uppercase px-8 py-4 text-sm sm:text-base border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] cursor-pointer transition-all duration-200"
               >
                 I&apos;M READY TO RAISE
               </Button>

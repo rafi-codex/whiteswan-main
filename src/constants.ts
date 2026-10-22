@@ -143,7 +143,7 @@ export const WHICH_ONE_TILES = {
   tiles: [
     {
       id: "lane-space",
-      title: "I'm a space company",
+      title: "I'm a space or space-adjacent company",
       subtitle: "Raising seed through Series B",
     },
     {
@@ -166,7 +166,7 @@ export const LANE_BOXES = [
     teaser:
       'Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: "Love what you\'re doing. Not the right stage. Come back when you have a lead."',
     type: "single" as const,
-    body: 'Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: "Love what you\'re doing. Not the right stage. Come back when you have a lead." Plenty of interest, but no checks. That\'s one of the gaps we close. Every investor has a buy box. We\'ve spoken with 500+ who back space, and we only bring you to the ones who fit. Our team is FINRA-licensed, so investors and founders know the process is clean and protected. Where debt fits better, we arrange that too. White-glove service from an experienced team.',
+    body: 'Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: "Love what you\'re doing. Not the right stage. Come back when you have a lead." Plenty of interest, but no checks. And like so many founders tell us, "We\'re not professional fundraisers. We\'re company operators." These are some of the problems we have solved for our partners. Every investor has a buy box. We\'ve spoken with 500+ who back space, and we only bring you to the ones who fit. Where debt fits better, we arrange that too. You show up to calls with us and the investors and talk about what makes you great. We do the rest. White-glove service from an experienced team. Our team is FINRA-licensed. Every raise runs under the SEC rules, compliant, clean, and prepared for the next stage of development.',
   },
   {
     id: "lane-energy",

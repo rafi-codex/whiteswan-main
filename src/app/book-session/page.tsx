@@ -209,7 +209,7 @@ function BookSessionContent() {
                   <button
                     type="submit"
                     disabled={bookingInProgress}
-                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-base bg-white text-[#0c131c] border border-[#c9a55a] hover:bg-slate-100 transition-all duration-200 shadow-xl active:scale-[0.99] disabled:opacity-50"
+                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl font-bold text-base bg-white text-[#0c131c] border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] hover:bg-royalblue hover:text-white transition-all duration-200 shadow-xl active:scale-[0.99] disabled:opacity-50"
                   >
                     <span>{bookingInProgress ? "Securing Session..." : "Confirm 45-Minute Advisory Session"}</span>
                     <ArrowRight className="w-4 h-4 ml-1" />

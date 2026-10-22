@@ -105,7 +105,7 @@ const LaneSections = () => {
               }`}
             >
               <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 transition-colors group-hover:text-white">
-                I&apos;m a space company
+                I&apos;m a space or space-adjacent company
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                 Raising seed through Series B
@@ -230,7 +230,7 @@ const LaneSections = () => {
               <div className="overflow-hidden">
                 <div className="px-6 pb-8 sm:px-8 sm:pb-10 lg:px-10 lg:pb-10 pt-2 border-t border-white/5">
                   <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed pt-2 font-normal">
-                    Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: &ldquo;Love what you&apos;re doing. Not the right stage. Come back when you have a lead.&rdquo; Plenty of interest, but no checks. That&apos;s one of the gaps we close. Every investor has a buy box. We&apos;ve spoken with 500+ who back space, and we only bring you to the ones who fit. Our team is FINRA-licensed, so investors and founders know the process is clean and protected. Where debt fits better, we arrange that too. White-glove service from an experienced team.
+                    Investors love the tech and take the meeting. Then you hear it, or it just shows up in an email: &ldquo;Love what you&apos;re doing. Not the right stage. Come back when you have a lead.&rdquo; Plenty of interest, but no checks. And like so many founders tell us, &ldquo;We&apos;re not professional fundraisers. We&apos;re company operators.&rdquo; These are some of the problems we have solved for our partners. Every investor has a buy box. We&apos;ve spoken with 500+ who back space, and we only bring you to the ones who fit. Where debt fits better, we arrange that too. You show up to calls with us and the investors and talk about what makes you great. We do the rest. White-glove service from an experienced team. Our team is FINRA-licensed. Every raise runs under the SEC rules, compliant, clean, and prepared for the next stage of development.
                   </p>
                 </div>
               </div>
@@ -395,7 +395,7 @@ const LaneSections = () => {
               <Button
                 variant="white"
                 size="lg"
-                className="font-bold tracking-wider uppercase px-9 py-4 text-sm sm:text-base border border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] hover:scale-[1.02] transition-all cursor-pointer"
+                className="font-bold tracking-wider uppercase px-9 py-4 text-sm sm:text-base border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_20px_rgba(201,165,90,0.5)] hover:shadow-[0_0_30px_rgba(201,165,90,0.75)] hover:scale-[1.02] transition-all cursor-pointer"
               >
                 I&apos;M READY TO RAISE
               </Button>
