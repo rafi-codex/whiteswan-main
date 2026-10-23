@@ -117,7 +117,7 @@ const HeaderSection = () => {
           </p>
 
           <h1
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-delay="200"
             className="text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white font-serif"
           >
@@ -160,7 +160,7 @@ const HeaderSection = () => {
 
         {/* Right Column: 160px Logo + 3 Stat Tiles */}
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-delay="400"
           className="w-full lg:w-5/12 flex flex-col items-center lg:items-end gap-6"
         >

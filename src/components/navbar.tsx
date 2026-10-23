@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "mx-auto z-50 left-0 right-0 bg-[#0c131c]/90 backdrop-blur-md border-b border-white/10 py-2 md:py-3.5 fixed top-0 w-full px-4 lg:px-32 transition-colors",
+        "mx-auto z-50 left-0 right-0 bg-[#0c131c]/90 backdrop-blur-md border-b border-white/10 py-2 md:py-3.5 fixed top-0 w-full pl-4 pr-1 sm:px-6 lg:px-32 transition-colors",
         {
           "bg-[#0c131c]": isOpen,
         }
@@ -62,7 +62,7 @@ const Navbar = () => {
             </Button>
           </Link>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden -mr-1 flex items-center">
           <Hamburger
             size={24}
             toggled={isOpen}

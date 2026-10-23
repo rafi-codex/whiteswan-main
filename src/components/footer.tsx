@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { NAV_LINKS } from "../../constants";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
@@ -26,16 +27,22 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4 flex flex-col items-center md:items-start">
           <h5 className="font-normal text-sm uppercase tracking-wider text-gray-400">Menu</h5>
           <div className="flex gap-4 lg:gap-6 flex-col md:flex-row items-center">
             {NAV_LINKS.map((item, index) => (
-              <Link key={index} href={item.path} className="text-gray-300 hover:text-white truncate">
+              <Link key={index} href={item.path} className="text-gray-300 hover:text-white transition-colors text-[15px] font-normal truncate">
                 {item.name}
               </Link>
             ))}
-            <Link href="/choice" className="text-gray-300 hover:text-white truncate">
-              I&apos;M READY TO RAISE
+            <Link href="/choice" className="pt-2 md:pt-0">
+              <Button
+                variant="white"
+                size="sm"
+                className="font-bold tracking-wider uppercase px-5 py-2 text-xs sm:text-[13px] border-[0.1875rem] border-[#c9a55a] hover:border-[#dfbb72] shadow-[0_0_14px_rgba(201,165,90,0.45)] hover:shadow-[0_0_22px_rgba(201,165,90,0.7)] cursor-pointer rounded-lg transition-all duration-200"
+              >
+                I&apos;M READY TO RAISE
+              </Button>
             </Link>
           </div>
         </div>

@@ -139,10 +139,10 @@ function ProfileContent() {
                   <div
                     className={`relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full transition-all duration-300 ease-out overflow-hidden ${
                       isJoey
-                        ? "p-1 border-[3px] border-[#c9a55a] shadow-[0_0_20px_rgba(201,165,90,0.35)] group-hover:scale-105"
+                        ? "p-1 border-[3px] border-[#dfbb72] shadow-[0_0_24px_rgba(223,187,114,0.6)] group-hover:scale-105"
                         : isSelected
-                        ? "p-1 border-2 border-[#c9a55a] shadow-[0_0_15px_rgba(201,165,90,0.35)] group-hover:border-[3px] group-hover:border-[#dfbb72] group-hover:scale-105"
-                        : "p-0.5 border border-[#c9a55a]/75 shadow-md group-hover:border-[2.5px] group-hover:border-[#c9a55a] group-hover:shadow-[0_0_18px_rgba(201,165,90,0.45)] group-hover:scale-105"
+                        ? "p-1 border-2 border-[#c9a55a] shadow-[0_0_16px_rgba(201,165,90,0.4)] group-hover:scale-105"
+                        : "p-0.5 border-2 border-[#c9a55a]/70 shadow-[0_0_10px_rgba(201,165,90,0.25)] group-hover:border-[#c9a55a] group-hover:shadow-[0_0_16px_rgba(201,165,90,0.4)] group-hover:scale-105"
                     }`}
                   >
                     <Image
@@ -203,7 +203,7 @@ function ProfileContent() {
                 <div
                   className={`w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden shadow-2xl ${
                     selectedMember.slug === "joey-bean"
-                      ? "p-1 border-[3px] border-[#c9a55a] shadow-[0_0_25px_rgba(201,165,90,0.4)]"
+                      ? "p-1 border-[3px] border-[#dfbb72] shadow-[0_0_28px_rgba(223,187,114,0.6)]"
                       : "p-1 border-2 border-[#c9a55a]/80 shadow-lg"
                   }`}
                 >

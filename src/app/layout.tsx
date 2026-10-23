@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar";
@@ -23,6 +23,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "White Swan Advisors",
   description: "Boutique Merchant Bank and Capital Advisory Firm For The Lower-middle Market.",
@@ -39,9 +45,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden bg-[#0c131c]">
       <AOSInit />
-      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased bg-[#0c131c] text-white overflow-x-hidden min-h-screen w-full relative`}>
         {/* <NextTopLoader color="#153147" showSpinner={false} /> */}
         <Navbar />
         {children}

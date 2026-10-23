@@ -59,7 +59,7 @@ const HowItWorks = () => {
           <div className="relative z-10 w-full max-w-lg space-y-6 p-4 sm:p-6">
             {/* Card 1: You */}
             <div
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="200"
               className="relative bg-white text-gray-900 rounded-xl p-6 sm:p-7 shadow-2xl border border-gray-100 flex items-start gap-5"
             >
@@ -83,7 +83,7 @@ const HowItWorks = () => {
 
             {/* Card 2: Us: Everything Else */}
             <div
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="400"
               className="relative bg-white text-gray-900 rounded-xl p-6 sm:p-7 shadow-2xl border border-gray-100 flex items-start gap-5"
             >
